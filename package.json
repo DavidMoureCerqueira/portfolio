@@ -16,10 +16,13 @@
     "daisyui": "^5.7.50",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
     "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@tailwindcss/typography": "^0.5.20",
     "@tanstack/router-plugin": "^1.168.47",
     "@types/node": "^24.13.3",
     "@types/react": "^19.2.18",
