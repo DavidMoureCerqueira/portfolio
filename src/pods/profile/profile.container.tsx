@@ -1,5 +1,18 @@
+import { TimeLineProfile } from "./components/timeline-profile.component";
 import { ProfileComponent } from "./profile.component";
+import { ProfileVm } from "./profile.vm";
+import { TimeLineEntryVm } from "./time-line/time-line-entry.vm";
 
-export function ProfileContainer(){
-    return <ProfileComponent/>
+interface ProfileContainerProps{
+  profile:ProfileVm,
+  timeLine:TimeLineEntryVm[]
+}
+
+export function ProfileContainer({profile,timeLine}:ProfileContainerProps) {
+  console.log(profile)
+  return <>
+  <ProfileComponent profile={profile} />;
+  <TimeLineProfile timeLine={timeLine}/>
+  </>
+
 }
