@@ -87,6 +87,9 @@
   --focus: #1d4ed8;
   --cota: #1a43bf; /* brand-text en claro */
   --shadow-float: 0 8px 24px rgba(11, 31, 58, 0.12);
+  /* Foto en duotono: gris sobre brand con multiply */
+  --duotone-bg: var(--color-primary);
+  --duotone-blend: multiply;
 }
 
 /* Oscuro cuando no hay elección guardada y el sistema lo pide */
@@ -103,6 +106,8 @@
     --focus: #ffd23f;
     --cota: #ffd23f; /* accent-text en oscuro */
     --shadow-float: 0 8px 24px rgba(0, 0, 0, 0.45);
+    --duotone-bg: var(--color-secondary);
+    --duotone-blend: luminosity;
   }
 }
 
@@ -118,6 +123,8 @@
   --focus: #ffd23f;
   --cota: #ffd23f;
   --shadow-float: 0 8px 24px rgba(0, 0, 0, 0.45);
+  --duotone-bg: var(--color-secondary);
+  --duotone-blend: luminosity;
 }
 
 /* Nombres de la guía como clases de Tailwind: bg-line, text-ink-muted, bg-brand-soft... */
@@ -295,6 +302,23 @@
   background-size: 24px 24px;
 }
 
+/* Foto del hero teñida con la marca (multiply en claro, luminosity en oscuro) */
+@utility duotone {
+  background-color: var(--duotone-bg);
+  & img {
+    filter: grayscale(1) contrast(1.05);
+    mix-blend-mode: var(--duotone-blend);
+  }
+}
+
+/* Logo de tecnología (slug de Simple Icons) pintado con el color del texto */
+@utility tech-icon {
+  display: inline-block;
+  flex-shrink: 0;
+  background-color: currentColor;
+  mask: var(--icon-url) center / contain no-repeat;
+}
+
 /* Franja amarilla de Proyectos personales: se dibuja de izquierda a derecha */
 @utility franja-accent {
   display: block;
@@ -312,6 +336,59 @@
   background-position: 0 88%;
   background-size: 100% 10px;
   transition: background-size var(--duration-transition) var(--ease-plano);
+}
+
+/* Contenido markdown de Content Island (línea temporal, proyectos, modificaciones) */
+@utility markdown-body {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--color-base-content);
+
+  & > * + * {
+    margin-top: 12px;
+  }
+  & strong {
+    font-weight: 600;
+  }
+  /* Un párrafo que solo contiene negrita hace de subtítulo: se pinta como cota */
+  & .markdown-subtitle {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    line-height: 1.4;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--cota);
+  }
+  & * + .markdown-subtitle {
+    margin-top: 24px;
+  }
+  & ul {
+    list-style: disc;
+    padding-left: 20px;
+  }
+  & ol {
+    list-style: decimal;
+    padding-left: 20px;
+  }
+  & li + li {
+    margin-top: 4px;
+  }
+  & li::marker {
+    color: var(--ink-muted);
+  }
+  & a {
+    color: var(--color-secondary-content);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  & code {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    background-color: var(--color-base-300);
+    border-radius: var(--radius-sm);
+    padding: 1px 6px;
+  }
 }
 
 @layer base {

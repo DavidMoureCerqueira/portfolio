@@ -21,5 +21,8 @@ content:timeLineEntry.content,
 }
 
 export function mapperTimeLineEntriesApiToTimeLineEntriesVmArray(timeLineEntries:TimelineEntryApi[]):TimeLineEntryVm[]{
-    return timeLineEntries.map(mapperTimeLineEntryApiToTimeLineEntryVm)
+    // De la etapa más reciente a la más antigua
+    return timeLineEntries
+        .map(mapperTimeLineEntryApiToTimeLineEntryVm)
+        .sort((a, b) => new Date(b.startDate).getTime() - new Date(a.startDate).getTime())
 }

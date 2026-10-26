@@ -11,7 +11,7 @@ interface ProfileContainerProps{
 export function ProfileContainer({profile,timeLine}:ProfileContainerProps) {
   console.log(profile)
   return <>
-  <ProfileComponent profile={profile} />;
+  <ProfileComponent profile={profile} />
   <TimeLineProfile timeLine={timeLine}/>
   </>
 

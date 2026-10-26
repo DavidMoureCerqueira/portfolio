@@ -3,3 +3,5 @@ export * from "./theme-toggle.component";
 export * from "./button.component";
 export * from "./status-badge.component";
 export * from "./section-header.component";
+export * from "./tech-icon.component";
+export * from "./markdown.component";
