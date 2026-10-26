@@ -1,40 +1,377 @@
 @import "tailwindcss";
 
-/* Activa los temas light y dark que trae daisyUI */
+/* Sistema de diseño «Plano de taller»: ver design-system/GUIA_ESTILOS.md y tokens.json */
+
+/* Sin temas incluidos de daisyUI: solo los nuestros (papel y plano) */
 @plugin "daisyui" {
-  themes:
-    light --default,
-    dark --prefersdark;
+  themes: false;
 }
 
-/* Sobrescribe solo mis colores en el tema light de daisyUI */
+/* Tema claro: el plano impreso en papel */
 @plugin "daisyui/theme" {
-  name: "light";
-  --color-primary: #2196f3;
-  --color-secondary: #ff9800;
-  --color-base-100: #f5f5f5; /* background */
-  --color-base-200: #ffffff; /* surface */
-  --color-base-content: #212121; /* text */
+  name: "papel";
+  default: true;
+  color-scheme: light;
+  --color-base-100: #ffffff;
+  --color-base-200: #f2f5fa;
+  --color-base-300: #e7edf6;
+  --color-base-content: #0b1f3a;
+  --color-primary: #1d4ed8;
+  --color-primary-content: #ffffff;
+  --color-secondary: #dce6fb;
+  --color-secondary-content: #1a43bf;
+  --color-accent: #ffc72c;
+  --color-accent-content: #0b1f3a;
+  --color-neutral: #0b1f3a;
+  --color-neutral-content: #f2f5fa;
+  --color-info: #1d4ed8;
+  --color-info-content: #ffffff;
+  --color-success: #0b6b4a;
+  --color-success-content: #ffffff;
+  --color-warning: #ffc72c;
+  --color-warning-content: #0b1f3a;
+  --color-error: #b42318;
+  --color-error-content: #ffffff;
+  --radius-selector: 999px;
+  --radius-field: 999px;
+  --radius-box: 24px;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
 }
 
-/* Sobrescribe solo mis colores en el tema dark de daisyUI */
+/* Tema oscuro: el plano técnico azul */
 @plugin "daisyui/theme" {
-  name: "dark";
+  name: "plano";
   prefersdark: true;
-  --color-primary: #67b0eb;
-  --color-secondary: #eda945;
-  --color-base-100: #121212; /* background */
-  --color-base-200: #1e1e1e; /* surface */
-  --color-base-content: #dedede; /* text */
+  color-scheme: dark;
+  --color-base-100: #0f1f42;
+  --color-base-200: #0a1630;
+  --color-base-300: #15295a;
+  --color-base-content: #eaf0ff;
+  --color-primary: #7ea6ff;
+  --color-primary-content: #0a1630;
+  --color-secondary: #1a3270;
+  --color-secondary-content: #9dbbff;
+  --color-accent: #ffd23f;
+  --color-accent-content: #0a1630;
+  --color-neutral: #eaf0ff;
+  --color-neutral-content: #0a1630;
+  --color-info: #7ea6ff;
+  --color-info-content: #0a1630;
+  --color-success: #5fd3a6;
+  --color-success-content: #0a1630;
+  --color-warning: #ffd23f;
+  --color-warning-content: #0a1630;
+  --color-error: #ff8a7a;
+  --color-error-content: #0a1630;
+  --radius-selector: 999px;
+  --radius-field: 999px;
+  --radius-box: 24px;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
 }
 
-/* Mis nombres de clase: bg-background, bg-surface, text-text */
+/* Tokens que daisyUI no cubre: claro por defecto */
+:root,
+[data-theme="papel"] {
+  --line: #d3dcea;
+  --line-strong: #73839f;
+  --grid: #dce4f1;
+  --ink-muted: #4a5b78;
+  --brand-hover: #163fb0;
+  --accent-text: #7a5300;
+  --accent-soft: #fff1c2;
+  --success-soft: #d7f2e6;
+  --focus: #1d4ed8;
+  --cota: #1a43bf; /* brand-text en claro */
+  --shadow-float: 0 8px 24px rgba(11, 31, 58, 0.12);
+}
+
+/* Oscuro cuando no hay elección guardada y el sistema lo pide */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --line: #22386b;
+    --line-strong: #5e77ad;
+    --grid: #13254f;
+    --ink-muted: #a8b7d8;
+    --brand-hover: #a3c0ff;
+    --accent-text: #ffd23f;
+    --accent-soft: #3a3214;
+    --success-soft: #123b33;
+    --focus: #ffd23f;
+    --cota: #ffd23f; /* accent-text en oscuro */
+    --shadow-float: 0 8px 24px rgba(0, 0, 0, 0.45);
+  }
+}
+
+[data-theme="plano"] {
+  --line: #22386b;
+  --line-strong: #5e77ad;
+  --grid: #13254f;
+  --ink-muted: #a8b7d8;
+  --brand-hover: #a3c0ff;
+  --accent-text: #ffd23f;
+  --accent-soft: #3a3214;
+  --success-soft: #123b33;
+  --focus: #ffd23f;
+  --cota: #ffd23f;
+  --shadow-float: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+/* Nombres de la guía como clases de Tailwind: bg-line, text-ink-muted, bg-brand-soft... */
 @theme inline {
-  --color-background: var(--color-base-100);
-  --color-surface: var(--color-base-200);
+  --color-ink: var(--color-base-content);
+  --color-ink-muted: var(--ink-muted);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-grid: var(--grid);
+  --color-brand: var(--color-primary);
+  --color-brand-hover: var(--brand-hover);
+  --color-brand-ink: var(--color-primary-content);
+  --color-brand-text: var(--color-secondary-content);
+  --color-brand-soft: var(--color-secondary);
+  --color-accent-ink: var(--color-accent-content);
+  --color-accent-text: var(--accent-text);
+  --color-accent-soft: var(--accent-soft);
+  --color-success-soft: var(--success-soft);
+  --color-focus: var(--focus);
+  --color-cota-text: var(--cota);
+  --shadow-float: var(--shadow-float);
+
+  /* Mis nombres de clase: bg-background (página), bg-surface (tarjetas), text-text */
+  --color-background: var(--color-base-200);
+  --color-surface: var(--color-base-100);
   --color-text: var(--color-base-content);
 }
 
+@theme {
+  --font-display: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  --font-sans: Inter, "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Code", monospace;
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 999px;
+
+  /* Movimiento */
+  --ease-plano: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-micro: 150ms;
+  --duration-transition: 250ms;
+  --duration-appear: 450ms;
+
+  --animate-reveal: reveal var(--duration-appear) var(--ease-plano) both;
+  --animate-draw: draw var(--duration-appear) var(--ease-plano) both;
+  --animate-pulse-soft: pulse-soft 2s ease-in-out infinite;
+
+  @keyframes reveal {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes draw {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+
+  @keyframes pulse-soft {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.45;
+    }
+  }
+}
+
+/* Escala tipográfica */
+@utility text-display-xl {
+  font-family: var(--font-display);
+  font-size: 64px;
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  @media (max-width: 767px) {
+    font-size: 44px;
+  }
+}
+
+@utility text-display-l {
+  font-family: var(--font-display);
+  font-size: 44px;
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  @media (max-width: 767px) {
+    font-size: 34px;
+  }
+}
+
+@utility text-heading {
+  font-family: var(--font-display);
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+@utility text-title {
+  font-family: var(--font-display);
+  font-size: 21px;
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+@utility text-lead {
+  font-family: var(--font-sans);
+  font-size: 20px;
+  line-height: 1.55;
+  font-weight: 400;
+}
+
+@utility text-body {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.65;
+  font-weight: 400;
+}
+
+@utility text-small {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+@utility text-button {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+@utility text-cota {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.4;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+@utility text-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.3;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@utility text-code {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Motivos gráficos */
+@utility bg-plano-grid {
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Franja amarilla de Proyectos personales: se dibuja de izquierda a derecha */
+@utility franja-accent {
+  display: block;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-accent);
+  transform-origin: left;
+  animation: var(--animate-draw);
+}
+
+/* Marcador amarillo detrás de una palabra; el texto sigue en ink */
+@utility marcador {
+  background-image: linear-gradient(var(--color-accent), var(--color-accent));
+  background-repeat: no-repeat;
+  background-position: 0 88%;
+  background-size: 100% 10px;
+  transition: background-size var(--duration-transition) var(--ease-plano);
+}
+
+@layer base {
+  html {
+    transition:
+      background-color var(--duration-transition) var(--ease-plano),
+      color var(--duration-transition) var(--ease-plano);
+  }
+
+  body {
+    background-color: var(--color-base-200);
+    color: var(--color-base-content);
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+  }
+}
+
 .hover-zoom {
-  @apply transition-all duration-200 ease-in-out hover:scale-105 hover:shadow-2xs;
+  @apply transition-transform duration-150 ease-plano hover:scale-105;
+}
+
+/* Con movimiento reducido nada se desplaza: solo fundidos cortos */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 150ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-reveal {
+    animation: reveal-fade 150ms linear both;
+  }
+
+  .animate-draw,
+  .franja-accent,
+  .animate-pulse-soft {
+    animation: none;
+  }
+
+  .hover-zoom:hover,
+  .active\:scale-\[0\.97\]:active {
+    transform: none;
+  }
+
+  @keyframes reveal-fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 }

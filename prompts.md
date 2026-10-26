@@ -1,0 +1,1 @@
+Tienes en la ruta C:\Users\David\Desktop\portfolio\design-system tienes la guia y todo lo necesario para modelar toda la aplicación, quiero que adaptes esos estilos a mi aplicacion, no quiero que modifiques o cambios mis componentes o forma de trabajo con ellos fuera de lo necesario, entiendo los cambios para aplicar los estilos, pero no su composicion y distribucion.

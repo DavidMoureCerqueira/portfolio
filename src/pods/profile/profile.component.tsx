@@ -9,8 +9,8 @@ interface Props {
    return (
     <div >
       <ProfileImage src={profile.avatarUrl} alt={profile.name} />
-      <h1>{profile.name}</h1>
-      <p>{profile.role}</p>
-      <p>{profile.headline}</p>
+      <h1 className="text-display-xl text-ink">{profile.name}</h1>
+      <p className="text-cota text-cota-text">{profile.role}</p>
+      <p className="text-lead text-ink-muted">{profile.headline}</p>
     </div>
    ); }
