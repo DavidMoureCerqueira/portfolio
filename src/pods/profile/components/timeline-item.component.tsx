@@ -23,7 +23,8 @@ const monthFormatter = new Intl.DateTimeFormat("es-ES", {
 // "2026-03-01T00:00:00.000Z" → "Mar 2026"
 const formatMonth = (date: string) => {
   const parts = monthFormatter.formatToParts(new Date(date));
-  const month = parts.find((part) => part.type === "month")?.value.replace(".", "") ?? "";
+  const month =
+    parts.find((part) => part.type === "month")?.value.replace(".", "") ?? "";
   const year = parts.find((part) => part.type === "year")?.value ?? "";
   return `${month.charAt(0).toUpperCase()}${month.slice(1)} ${year}`;
 };
@@ -33,7 +34,10 @@ const formatRange = ({ startDate, endDate }: TimeLineEntryVm) =>
 
 const isCurrent = ({ startDate, endDate }: TimeLineEntryVm) => {
   const now = Date.now();
-  return new Date(startDate).getTime() <= now && (!endDate || new Date(endDate).getTime() >= now);
+  return (
+    new Date(startDate).getTime() <= now &&
+    (!endDate || new Date(endDate).getTime() >= now)
+  );
 };
 
 export function TimeLineItem({ entry, index }: TimeLineItemProps) {
@@ -54,7 +58,9 @@ export function TimeLineItem({ entry, index }: TimeLineItemProps) {
       className="group grid animate-reveal md:grid-cols-[10rem_1fr] md:gap-x-8"
       style={{ animationDelay: `${index * 60}ms` }}
     >
-      <p className="hidden pt-1 text-right text-cota text-ink-muted md:block">{range}</p>
+      <p className="hidden pt-1 text-right text-cota text-ink-muted md:block">
+        {range}
+      </p>
 
       <div className="relative border-l border-line pb-12 pl-8 group-last:pb-0">
         <span
@@ -65,7 +71,9 @@ export function TimeLineItem({ entry, index }: TimeLineItemProps) {
         <p className="text-cota text-ink-muted md:hidden">{range}</p>
 
         <div className="flex flex-wrap items-center gap-2">
-          <span className="text-label text-ink-muted">{typeLabel[entry.type]}</span>
+          <span className="text-label text-ink-muted">
+            {typeLabel[entry.type]}
+          </span>
           {current && <StatusBadge status="en-curso" />}
         </div>
 
@@ -102,7 +110,7 @@ export function TimeLineItem({ entry, index }: TimeLineItemProps) {
               aria-expanded={open}
               aria-controls={detailId}
               onClick={() => setOpen(!open)}
-              className="mt-4 inline-flex min-h-11 cursor-pointer items-center gap-1 text-button text-brand-text hover:underline underline-offset-4"
+              className="mt-4 inline-flex min-h-11 cursor-pointer items-center gap-1 text-button text-brand-text underline-offset-4 hover:underline"
             >
               {open ? "Ocultar detalle" : "Ver detalle"}
               <ChevronDown
@@ -119,7 +127,9 @@ export function TimeLineItem({ entry, index }: TimeLineItemProps) {
               className={`grid transition-[grid-template-rows] duration-250 ease-plano ${open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
             >
               <div className="overflow-hidden">
-                <Markdown className="mt-2 rounded-md border border-line bg-base-200 p-6">{entry.content}</Markdown>
+                <Markdown className="mt-2 rounded-md border border-line bg-base-200 p-6">
+                  {entry.content}
+                </Markdown>
               </div>
             </div>
           </>

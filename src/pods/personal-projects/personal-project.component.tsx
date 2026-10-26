@@ -1,3 +1,3 @@
-export  function PersonalProjectsComponent() {
+export function PersonalProjectsComponent() {
   return <div>PersonalProjectsComponent works</div>;
 }

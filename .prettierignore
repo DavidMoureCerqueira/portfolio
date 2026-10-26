@@ -1,1 +1,7 @@
 src/routeTree.gen.ts
+dist
+.tanstack
+.output
+.vinxi
+node_modules
+package-lock.json

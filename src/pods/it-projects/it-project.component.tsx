@@ -1,3 +1,3 @@
-export  function ITProjectsComponent() {
+export function ITProjectsComponent() {
   return <div>ITProjectsComponent works</div>;
 }

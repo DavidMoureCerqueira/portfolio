@@ -1,5 +1,5 @@
-import {  PersonalProjectsComponent } from "./personal-project.component";
+import { PersonalProjectsComponent } from "./personal-project.component";
 
-export function PersonalProjectContainer(){
-    return <PersonalProjectsComponent/>
+export function PersonalProjectContainer() {
+  return <PersonalProjectsComponent />;
 }

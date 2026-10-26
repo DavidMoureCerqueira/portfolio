@@ -1,6 +1,10 @@
 :root {
   /* Estilo «body» de la guía; las familias se definen en app.css (@theme) */
-  font: 400 16px/1.65 Inter, "Segoe UI", system-ui, sans-serif;
+  font:
+    400 16px/1.65 Inter,
+    "Segoe UI",
+    system-ui,
+    sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

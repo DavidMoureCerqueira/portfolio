@@ -1,6 +1,5 @@
 import { TechnologyVm } from "./technology/technology.vm";
 
-
 export interface ProfileVm {
   name: string;
   role: string;
@@ -13,9 +12,8 @@ export interface ProfileVm {
   linkedinUrl: string;
   cvUrl?: string;
   content: string;
-  skills:TechnologyVm[];
-  softSkills:string[];
-  interest:string[];
-  languages:string[];
+  skills: TechnologyVm[];
+  softSkills: string[];
+  interest: string[];
+  languages: string[];
 }
-

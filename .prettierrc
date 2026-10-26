@@ -1,4 +1,5 @@
 {
   "plugins": ["prettier-plugin-tailwindcss"],
-  "tailwindStylesheet": "./src/styles/App.css"
+  "tailwindStylesheet": "./src/core/theme/app.css",
+  "endOfLine": "auto"
 }

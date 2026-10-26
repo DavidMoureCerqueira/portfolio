@@ -6,7 +6,9 @@ const themeScript = `try{var t=localStorage.getItem("theme");if(t==="papel"||t==
 
 // Documento HTML completo: con TanStack Start lo renderiza el servidor (sustituye a index.html)
 // Sin data-theme fijo: manda prefers-color-scheme hasta que el usuario elige tema
-export const RootDocument = ({ children }: Readonly<{ children: ReactNode }>) => {
+export const RootDocument = ({
+  children,
+}: Readonly<{ children: ReactNode }>) => {
   return (
     <html lang="es" suppressHydrationWarning>
       <head>

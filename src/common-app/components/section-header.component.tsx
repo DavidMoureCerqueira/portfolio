@@ -38,7 +38,9 @@ export function SectionHeader({
       <div className="mt-3 flex flex-wrap items-end justify-between gap-4">
         <div>
           <h2 className="text-heading text-ink">{title}</h2>
-          {stripe && <span className="franja-accent mt-3 w-24" aria-hidden="true" />}
+          {stripe && (
+            <span className="mt-3 franja-accent w-24" aria-hidden="true" />
+          )}
           {lead && <p className="mt-3 text-lead text-ink-muted">{lead}</p>}
         </div>
         {action}

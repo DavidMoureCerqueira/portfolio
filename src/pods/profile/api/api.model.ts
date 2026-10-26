@@ -1,10 +1,10 @@
-import type { Media } from '@content-island/api-client';
-import { TechnologyApi } from '../technology/api/api.model';
+import type { Media } from "@content-island/api-client";
+import { TechnologyApi } from "../technology/api/api.model";
 
 export interface ProfileApi {
   id: string;
-  language: 'es';
-  lastUpdate: string; 
+  language: "es";
+  lastUpdate: string;
   name: string;
   role: string;
   headline: string;
@@ -21,4 +21,3 @@ export interface ProfileApi {
   cv?: Media;
   content: string;
 }
-

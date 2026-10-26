@@ -2,7 +2,10 @@ export const Footer = () => {
   return (
     <footer className="footer flex items-center justify-between border-t border-line bg-surface px-6 py-4 text-small text-ink-muted sm:footer-horizontal md:px-10">
       <aside className="grid-flow-col items-center">
-        <a href="mailto:moure96@gmail.com" className="flex min-h-11 items-center gap-4 transition-colors duration-150 ease-plano hover:text-brand-text">
+        <a
+          href="mailto:moure96@gmail.com"
+          className="flex min-h-11 items-center gap-4 transition-colors duration-150 ease-plano hover:text-brand-text"
+        >
           <svg
             aria-label="Email"
             xmlns="http://www.w3.org/2000/svg"
@@ -21,7 +24,10 @@ export const Footer = () => {
         </a>
       </aside>
       <nav className="grid-flow-col gap-4 place-self-center justify-self-end">
-        <a href="https://www.linkedin.com/in/david-moure-cerqueira/" className="inline-flex size-11 items-center justify-center transition-colors duration-150 ease-plano hover:text-brand-text">
+        <a
+          href="https://www.linkedin.com/in/david-moure-cerqueira/"
+          className="inline-flex size-11 items-center justify-center transition-colors duration-150 ease-plano hover:text-brand-text"
+        >
           <svg
             aria-label="LinkedIn"
             xmlns="http://www.w3.org/2000/svg"
@@ -38,7 +44,10 @@ export const Footer = () => {
             />
           </svg>
         </a>
-        <a href="https://www.instagram.com/moureworks/" className="inline-flex size-11 items-center justify-center transition-colors duration-150 ease-plano hover:text-brand-text">
+        <a
+          href="https://www.instagram.com/moureworks/"
+          className="inline-flex size-11 items-center justify-center transition-colors duration-150 ease-plano hover:text-brand-text"
+        >
           <svg
             aria-label="Instagram"
             xmlns="http://www.w3.org/2000/svg"

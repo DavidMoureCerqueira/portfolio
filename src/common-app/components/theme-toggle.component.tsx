@@ -14,7 +14,9 @@ const getCurrentTheme = (): Theme => {
 // Se actualiza si cambia data-theme en <html> o el tema del sistema
 const subscribe = (onChange: () => void) => {
   const observer = new MutationObserver(onChange);
-  observer.observe(document.documentElement, { attributeFilter: ["data-theme"] });
+  observer.observe(document.documentElement, {
+    attributeFilter: ["data-theme"],
+  });
   const media = window.matchMedia(darkQuery);
   media.addEventListener("change", onChange);
   return () => {
@@ -25,7 +27,11 @@ const subscribe = (onChange: () => void) => {
 
 export function ThemeToggle() {
   // null en el servidor: no conoce el tema del visitante
-  const theme = useSyncExternalStore<Theme | null>(subscribe, getCurrentTheme, () => null);
+  const theme = useSyncExternalStore<Theme | null>(
+    subscribe,
+    getCurrentTheme,
+    () => null,
+  );
 
   const toggle = () => {
     const next: Theme = getCurrentTheme() === "plano" ? "papel" : "plano";

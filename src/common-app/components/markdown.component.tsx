@@ -11,8 +11,12 @@ const components: Components = {
   p: ({ node, children }) => {
     const nodes = node?.children ?? [];
     const isSubtitle =
-      nodes.length === 1 && nodes[0].type === "element" && nodes[0].tagName === "strong";
-    return <p className={isSubtitle ? "markdown-subtitle" : undefined}>{children}</p>;
+      nodes.length === 1 &&
+      nodes[0].type === "element" &&
+      nodes[0].tagName === "strong";
+    return (
+      <p className={isSubtitle ? "markdown-subtitle" : undefined}>{children}</p>
+    );
   },
 };
 

@@ -1,4 +1,8 @@
-import { Markdown, Marker, SectionHeader } from "../../../common-app/components";
+import {
+  Markdown,
+  Marker,
+  SectionHeader,
+} from "../../../common-app/components";
 import type { ProfileVm } from "../profile.vm";
 
 interface Props {

@@ -1,5 +1,6 @@
 // Refleja el enum de estados de Content Island
-export type Status = "idea" | "pendiente" | "en-curso" | "pausado" | "finalizado";
+export type Status =
+  "idea" | "pendiente" | "en-curso" | "pausado" | "finalizado";
 
 interface Props {
   status: Status;
@@ -11,9 +12,15 @@ const statusConfig: Record<Status, { label: string; className: string }> = {
     className: "border border-dashed border-line-strong text-ink-muted",
   },
   pendiente: { label: "Pendiente", className: "bg-brand-soft text-brand-text" },
-  "en-curso": { label: "En curso", className: "bg-accent-soft text-accent-text" },
+  "en-curso": {
+    label: "En curso",
+    className: "bg-accent-soft text-accent-text",
+  },
   pausado: { label: "Pausado", className: "bg-base-300 text-ink-muted" },
-  finalizado: { label: "Finalizado", className: "bg-success-soft text-success" },
+  finalizado: {
+    label: "Finalizado",
+    className: "bg-success-soft text-success",
+  },
 };
 
 export function StatusBadge({ status }: Props) {

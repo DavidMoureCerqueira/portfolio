@@ -5,3 +5,4 @@ export * from "./status-badge.component";
 export * from "./section-header.component";
 export * from "./tech-icon.component";
 export * from "./markdown.component";
+export * from "./route-error.component";

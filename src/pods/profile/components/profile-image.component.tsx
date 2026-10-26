@@ -21,8 +21,12 @@ export function ProfileImage({ src, alt }: Props) {
           aria-hidden="true"
         />
       ))}
-      <div className=" aspect-4/5 overflow-hidden rounded-lg">
-        <img className="size-full object-cover object-top" src={src} alt={alt} />
+      <div className="aspect-4/5 overflow-hidden rounded-lg">
+        <img
+          className="size-full object-cover object-top"
+          src={src}
+          alt={alt}
+        />
       </div>
     </div>
   );
