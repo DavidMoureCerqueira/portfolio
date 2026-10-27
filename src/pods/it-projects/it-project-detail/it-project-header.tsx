@@ -4,7 +4,7 @@ interface Props {
   slug: string;
 }
 
-export function ItProjectHeadera({ slug }: Props) {
+export function ItProjectHeader({ slug }: Props) {
   return (
     <nav
       aria-label="Migas de pan"
