@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Link, type LinkProps } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 
 type ButtonVariant = "principal" | "destacado" | "secundario" | "enlace";
@@ -6,7 +7,9 @@ type ButtonVariant = "principal" | "destacado" | "secundario" | "enlace";
 interface Props {
   variant?: ButtonVariant;
   children: ReactNode;
-  // Con href se pinta un <a>; sin él, un <button>
+  // Ruta interna: se pinta un Link del router (respeta la ruta base y no recarga)
+  to?: LinkProps["to"];
+  // Enlace externo o mailto: se pinta un <a>; sin to ni href, un <button>
   href?: string;
   external?: boolean;
   icon?: ReactNode;
@@ -31,6 +34,7 @@ const variantClass: Record<ButtonVariant, string> = {
 export function Button({
   variant = "principal",
   children,
+  to,
   href,
   external = false,
   icon,
@@ -59,6 +63,14 @@ export function Button({
       )}
     </>
   );
+
+  if (to) {
+    return (
+      <Link to={to} className={classes} onClick={onClick}>
+        {content}
+      </Link>
+    );
+  }
 
   if (href) {
     return (

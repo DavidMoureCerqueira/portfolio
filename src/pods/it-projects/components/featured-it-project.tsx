@@ -6,7 +6,6 @@ interface FeaturedItProjectProps {
   itProject: ItProjectPreviewVm;
 }
 
-// Proyecto IT destacado en Home: siempre uno, el último
 export function FeaturedItProject({ itProject }: FeaturedItProjectProps) {
   return (
     <section className="mt-12 md:mt-20">
@@ -15,7 +14,7 @@ export function FeaturedItProject({ itProject }: FeaturedItProjectProps) {
         name="Proyectos"
         title="Lo último que he construido"
         action={
-          <Button variant="enlace" href="/it-projects">
+          <Button variant="enlace" to="/it-projects">
             Ver todos los proyectos IT
           </Button>
         }

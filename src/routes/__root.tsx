@@ -1,6 +1,7 @@
 /// <reference types="vite/client" />
-import { createRootRoute, Navigate } from "@tanstack/react-router";
+import { createRootRoute } from "@tanstack/react-router";
 import { MainLayout, RootDocument } from "../layouts";
+import { NotFound } from "../common-app/components";
 import indexCss from "../core/theme/index.css?url";
 import appCss from "../core/theme/app.css?url";
 
@@ -12,7 +13,12 @@ export const Route = createRootRoute({
       { title: "Portfolio" },
     ],
     links: [
-      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+      // BASE_URL: "/" en local, "/portfolio/" en GitHub Pages
+      {
+        rel: "icon",
+        type: "image/svg+xml",
+        href: `${import.meta.env.BASE_URL}favicon.svg`,
+      },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       {
         rel: "preconnect",
@@ -32,5 +38,5 @@ export const Route = createRootRoute({
       <MainLayout />
     </RootDocument>
   ),
-  notFoundComponent: () => <Navigate to="/" replace />,
+  notFoundComponent: NotFound,
 });
