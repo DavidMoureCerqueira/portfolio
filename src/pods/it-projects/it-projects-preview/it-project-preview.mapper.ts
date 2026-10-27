@@ -1,15 +1,13 @@
 import { mapperTechnologyApiToTechnologyVm } from "../../profile/technology/technology.mapper";
 import { ItProjectApi } from "../api/api.model";
 import { ItProjectPreviewVm } from "./it-project-preview.vm";
+import type { ItProjectKind } from "../api/api.model";
 
-// galleryAlt va en paralelo a gallery: el alt de la portada es el de su imagen en la galería
-const getCoverAlt = (project: ItProjectApi): string => {
-  const coverIndex =
-    project.gallery?.findIndex(
-      (media) =>
-        media.url === project.cover?.url || media.name === project.cover?.name,
-    ) ?? -1;
-  return project.galleryAlt?.[coverIndex] ?? `Portada de ${project.title}`;
+const kindLabels: Record<ItProjectKind, string> = {
+  practicas: "Prácticas",
+  academico: "Académico",
+  personal: "Personal",
+  freelance: "Freelance",
 };
 
 export function mapperItProjectApitoItProjectPreview(
@@ -20,10 +18,15 @@ export function mapperItProjectApitoItProjectPreview(
     slug: project.slug,
     status: project.status,
     summary: project.summary,
-    kindLabel: project.kind,
+    kindLabel: kindLabels[project.kind],
     // Solo el año: "2026-06-01T00:00:00.000Z" → "2026"
     year: (project.endDate ?? project.startDate)?.slice(0, 4),
-    cover: { url: project.cover?.url ?? "", alt: getCoverAlt(project) },
+    cover: project.cover?.url
+      ? {
+          url: project.cover.url,
+          alt: project.coverAlt ?? `Portada de ${project.title}`,
+        }
+      : undefined,
     technologies: project.technologies.map(mapperTechnologyApiToTechnologyVm),
     demoUrl: project.demoUrl,
     repoUrl: project.repoUrl,

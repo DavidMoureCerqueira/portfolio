@@ -35,7 +35,12 @@ export const getItProjectsPreview = createServerFn({ method: "GET" })
         language: "es",
         includeRelatedContent: 1,
       });
-
+      itProjects.sort((a, b) => {
+        if (a.order === undefined && b.order === undefined) return 0;
+        if (a.order === undefined) return 1;
+        if (b.order === undefined) return -1;
+        return a.order - b.order;
+      });
       return itProjects.map(mapperItProjectApitoItProjectPreview);
     } catch (error) {
       console.error(`Error cargando previews de los proyectos: ${error}`);

@@ -16,6 +16,7 @@ technologies: [python, flask, sqlite, pokeapi, html5, tailwindcss, daisyui]
 repoUrl: https://github.com/DavidMoureCerqueira/BadgeBattles
 demoUrl: ""
 cover: assets/it-projects/badgebattles/pokemon-battle.webp
+coverAlt: Combate en curso con las barras de vida y los movimientos disponibles
 gallery:
   - src: assets/it-projects/badgebattles/welcome.webp
     alt: Pantalla de bienvenida de BadgeBattles con el formulario de entrada del entrenador

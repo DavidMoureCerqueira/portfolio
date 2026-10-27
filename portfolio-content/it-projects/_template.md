@@ -16,6 +16,7 @@ technologies: [react, typescript]
 repoUrl: ""
 demoUrl: ""
 cover: assets/it-projects/[slug]/cover.webp
+coverAlt: ""
 gallery:
   - src: assets/it-projects/[slug]/01.webp
     alt: "[RELLENAR] Qué se ve en la captura"

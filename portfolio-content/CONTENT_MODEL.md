@@ -1,6 +1,6 @@
 # Modelo de contenido del portfolio (Content Island)
 
-Este documento es el "contrato" entre los README y Content Island. Cada archivo `.md` de esta carpeta es **una entrada** de un modelo. El bloque YAML de arriba (frontmatter) son los campos estructurados; el texto de debajo es el campo `content` (markdown).
+Este documento es el "contrato" entre los README y Content Island. Si no coinciden, manda Content Island: este documento se actualiza para reflejarlo. Cada archivo `.md` de esta carpeta es **una entrada** de un modelo. El bloque YAML de arriba (frontmatter) son los campos estructurados; el texto de debajo es el campo `content` (markdown).
 
 ## Convenciones
 
@@ -21,7 +21,7 @@ Este documento es el "contrato" entre los README y Content Island. Cada archivo 
 | `pausado`    | Pausado         | Empezado y parado (falta pieza, tiempo...) |
 | `finalizado` | Finalizado      | Terminado                                  |
 
-Si Content Island no ofrece un tipo "selección", se guarda como texto corto y el front valida contra esta lista.
+En Content Island es el enum `Status`.
 
 ## Modelos
 
@@ -31,13 +31,13 @@ Si Content Island no ofrece un tipo "selección", se guarda como texto corto y e
 | name           | Texto corto              | Sí | |
 | role           | Texto corto              | Sí | "Desarrollador web Frontend · React" |
 | headline       | Texto corto              | Sí | Una frase gancho bajo el nombre |
-| avatar         | Media                    | Sí | Foto |
+| avatar         | Media (webp, jpg, jpeg, png) | Sí | Foto |
 | location       | Texto corto              | No | |
 | availability   | Texto corto              | No | "Disponible para incorporación" |
 | skills         | Lista de referencias → Technology | No | Stack principal |
-| softSkills     | Texto largo (una por línea) | No | Aptitudes |
-| languages      | Texto largo (uno por línea) | No | Idioma y nivel |
-| interests      | Texto largo (uno por línea) | No | Pequeño toque personal |
+| softSkills     | Lista de texto corto     | No | Aptitudes |
+| languages      | Lista de texto corto     | No | Idioma y nivel |
+| interests      | Lista de texto corto     | No | Pequeño toque personal |
 | email, githubUrl, linkedinUrl | Texto corto | No | Contacto |
 | cv             | Media (PDF)              | No | Botón de descarga |
 | content        | Markdown                 | Sí | Minibio completa |
@@ -47,7 +47,7 @@ Si Content Island no ofrece un tipo "selección", se guarda como texto corto y e
 |--------------|---------------|-------------|-------|
 | title        | Texto corto | Sí | Puesto o título |
 | organization | Texto corto | Sí | Empresa o centro |
-| type         | Selección   | Sí | `practicas` · `laboral` · `formacion` |
+| type         | Selección (TimelineType) | Sí | `practicas` · `laboral` · `formacion` |
 | isTech       | Booleano    | Sí | Permite filtrar o estilizar distinto lo no tech |
 | startDate / endDate | Fecha | Sí / No | El front ordena por startDate |
 | location     | Texto corto | No | |
@@ -56,12 +56,12 @@ Si Content Island no ofrece un tipo "selección", se guarda como texto corto y e
 | content      | Markdown    | No | Detalle desplegable: tareas y logros |
 
 ### Technology — catálogo reutilizable
-| Campo    | Tipo sugerido | Notas |
-|----------|---------------|-------|
-| name     | Texto corto | "React" |
-| category | Selección | `frontend` · `backend` · `database` · `testing` · `devops` · `tooling` · `design` |
-| icon     | Texto corto | Slug de [simple-icons](https://simpleicons.org) (`react`), evita subir imágenes. Vacío si no existe: el front muestra solo el nombre |
-| website  | Texto corto | |
+| Campo    | Tipo sugerido | Obligatorio | Notas |
+|----------|---------------|-------------|-------|
+| name     | Texto corto | Sí | "React" |
+| category | Selección (TechCategory) | Sí | `frontend` · `backend` · `database` · `testing` · `devops` · `tooling` · `design` |
+| icon     | Texto corto | No | Slug de [simple-icons](https://simpleicons.org) (`react`), evita subir imágenes. Vacío si no existe: el front muestra solo el nombre |
+| website  | Texto corto | No | |
 
 Se reutiliza en Profile, TimelineEntry y ItProject: si cambias un icono, cambia en toda la web.
 
@@ -72,15 +72,17 @@ Se reutiliza en Profile, TimelineEntry y ItProject: si cambias un icono, cambia 
 | status       | Selección (Estados) | Sí | |
 | featured     | Booleano | Sí | Aparece en "Destacados" de Home |
 | order        | Número | No | |
-| kind         | Selección | Sí | `practicas` · `academico` · `personal` · `freelance` |
+| kind         | Selección (ItProjectKind) | Sí | `practicas` · `academico` · `personal` · `freelance` |
 | summary      | Texto corto | Sí | Qué hace, en 1–2 líneas (tarjeta) |
 | role         | Texto corto | No | "Frontend", "Full stack"... |
 | teamSize     | Número | No | 1 = individual |
 | startDate / endDate | Fecha | No | |
 | technologies | Lista de referencias → Technology | Sí | |
 | repoUrl, demoUrl | Texto corto | No | |
-| cover        | Media | Sí | Imagen de la tarjeta |
+| cover        | Media | No | Imagen de la tarjeta |
+| coverAlt     | Texto corto | No | Texto alternativo de la portada |
 | gallery      | Lista de media | No | Capturas |
+| galleryAlt   | Lista de texto corto | No | Un alt por imagen de `gallery`, en el mismo orden (en los `.md`, el `alt` de cada imagen) |
 | content      | Markdown | Sí | Qué / por qué / cómo / decisiones / retos / aprendizajes |
 
 ### CarProject — pestaña Proyectos Personales
@@ -97,6 +99,7 @@ Se reutiliza en Profile, TimelineEntry y ItProject: si cambias un icono, cambia 
 | modifications | Lista de referencias → Modification | No | Ordenadas |
 | cover        | Media | Sí | |
 | gallery      | Lista de media | No | |
+| galleryAlt   | Lista de texto corto | No | Un alt por imagen de `gallery`, en el mismo orden |
 | content      | Markdown | Sí | Historia, compra, estado inicial |
 
 ### Modification — cada trabajo hecho a un coche
@@ -105,13 +108,14 @@ Se reutiliza en Profile, TimelineEntry y ItProject: si cambias un icono, cambia 
 | title       | Texto corto | Sí | |
 | car         | Referencia → CarProject | Sí | |
 | status      | Selección (Estados) | Sí | |
-| category    | Selección | Sí | `motor` · `transmision` · `suspension` · `frenos` · `chasis` · `carroceria` · `interior` · `electricidad` · `estetica` |
-| techniques  | Selección múltiple | No | `soldadura` · `impresion-3d` · `restauracion` · `pintura` · `mecanizado` · `electronica` · `fibra` · `tapiceria` · `mecanica` |
+| category    | Selección (ModCategory) | Sí | `motor` · `transmision` · `suspension` · `frenos` · `chasis` · `carroceria` · `interior` · `electricidad` · `estetica` |
+| techniques  | Selección múltiple (ModTechnique) | No | `soldadura` · `impresion-3d` · `restauracion` · `pintura` · `mecanizado` · `electronica` · `fibra` · `tapiceria` · `mecanica` |
 | difficulty  | Número (1–5) | No | |
 | startDate / endDate | Fecha | No | |
 | summary     | Texto corto | Sí | 1–2 líneas: es la parte principal de la ficha |
 | beforeImage / afterImage | Media | No | Para un comparador antes/después |
 | gallery     | Lista de media | No | 1–2 fotos como máximo: es un portfolio tech, no un reportaje |
+| galleryAlt  | Lista de texto corto | No | Un alt por imagen de `gallery`, en el mismo orden |
 | content     | Markdown | No | Solo en las modificaciones con algo que contar: motivo, proceso, resultado |
 
 ## Estructura de carpetas

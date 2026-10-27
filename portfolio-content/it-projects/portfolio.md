@@ -16,6 +16,7 @@ technologies: [react, typescript, vite, react-router, tailwindcss, daisyui, cont
 repoUrl: https://github.com/DavidMoureCerqueira/portfolio
 demoUrl: ""
 cover: assets/it-projects/portfolio/cover.webp      # pendiente: captura cuando haya diseño
+coverAlt: Página de inicio del portfolio con la presentación de David Moure Cerqueira
 gallery: []
 ---
 

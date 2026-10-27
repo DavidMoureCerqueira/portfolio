@@ -1,1 +1,1 @@
-export { ItProjectContainer } from "./it-project.container";
+export { ItProjectPreviewContainer as ItProjectContainer } from "./it-project-preview.container";

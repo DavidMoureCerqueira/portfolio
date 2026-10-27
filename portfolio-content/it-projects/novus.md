@@ -16,6 +16,7 @@ technologies: [bun, typescript, notion, slack, googleworkspace]
 repoUrl: ""
 demoUrl: ""
 cover: assets/it-projects/novus/cover.webp
+coverAlt: Diagrama del flujo de Novus entre Notion, Slack y Google Workspace
 gallery: []
 ---
 

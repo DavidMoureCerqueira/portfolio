@@ -16,6 +16,7 @@ technologies: [angular, typescript, tailwindcss, daisyui, konva, python, fastapi
 repoUrl: https://github.com/DavidMoureCerqueira/NeedToBrakeApp
 demoUrl: https://needtobrake.netlify.app
 cover: assets/it-projects/needtobrake/landing-page.webp
+coverAlt: Página de inicio de NeedToBrake con un coche en circuito de fondo
 gallery:
   - src: assets/it-projects/needtobrake/landing-page.webp
     alt: Página de inicio de NeedToBrake con un coche en circuito de fondo

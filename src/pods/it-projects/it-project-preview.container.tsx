@@ -1,12 +1,12 @@
 import { SectionHeader } from "../../common-app/components";
-import { ItProjectPreview } from "./components/it-project-preview";
+import { ItProjectPreview } from "./it-project-preview";
 import { ItProjectPreviewVm } from "./it-projects-preview/it-project-preview.vm";
 
 interface ItProjectProps {
   projects: ItProjectPreviewVm[];
 }
 
-export function ItProjectContainer({ projects }: ItProjectProps) {
+export function ItProjectPreviewContainer({ projects }: ItProjectProps) {
   return (
     <>
       <SectionHeader
@@ -18,7 +18,7 @@ export function ItProjectContainer({ projects }: ItProjectProps) {
         }
       ></SectionHeader>
       {projects.map((project) => (
-        <ItProjectPreview itProject={project} />
+        <ItProjectPreview itProject={project} key={project.slug} />
       ))}
     </>
   );

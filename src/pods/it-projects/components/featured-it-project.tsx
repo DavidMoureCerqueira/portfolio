@@ -1,6 +1,6 @@
 import { Button, SectionHeader } from "../../../common-app/components";
 import type { ItProjectPreviewVm } from "../it-projects-preview/it-project-preview.vm";
-import { ItProjectPreview } from "./it-project-preview";
+import { ItProjectPreview } from "../it-project-preview";
 
 interface FeaturedItProjectProps {
   itProject: ItProjectPreviewVm;

@@ -1,14 +1,14 @@
+import type { Status } from "../../../common-app/components";
 import { TechnologyVm } from "../../profile/technology/technology.vm";
-import { ItProjectKind, Status } from "../api/api.model";
 
 export interface ItProjectPreviewVm {
   title: string;
   slug: string;
   status: Status;
   summary: string;
-  kindLabel: ItProjectKind;
+  kindLabel: string;
   year?: string;
-  cover: { url: string; alt: string };
+  cover?: { url: string; alt: string };
   technologies: TechnologyVm[];
   demoUrl?: string;
   repoUrl?: string;

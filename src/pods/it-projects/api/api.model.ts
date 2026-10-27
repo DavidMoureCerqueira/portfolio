@@ -26,6 +26,7 @@ export interface ItProjectApi {
   repoUrl?: string;
   demoUrl?: string;
   cover?: Media;
+  coverAlt?: string;
   gallery?: Media[];
   galleryAlt?: string[];
   content: string;
