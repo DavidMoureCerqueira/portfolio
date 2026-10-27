@@ -1,10 +1,10 @@
 import { ItProjectCover } from "./components/it-project-cover";
-import { ItProjectHeader } from "./it-project-detail/it-project-header";
 import { ItProjectContent } from "./it-project-detail/it-project-content";
 import { ItProjectDetailHeader } from "./it-project-detail/it-project-detail-header";
 import type { ItProjectDetailVm } from "./it-project-detail/it-project-detail.vm";
 import { ItProjectFacts } from "./it-project-detail/it-project-facts";
 import { ItProjectGallery } from "./it-project-detail/it-project-gallery";
+import { ItProjectHeader } from "./it-project-detail/it-project-headera";
 import { ItProjectPagination } from "./it-project-detail/it-project-pagination";
 import { splitContentSections } from "./it-project-detail/split-content-sections";
 
