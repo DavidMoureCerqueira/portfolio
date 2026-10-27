@@ -1,7 +1,7 @@
 import { useId, useState } from "react";
 import { Button, StatusBadge, TechIcon } from "../../../common-app/components";
 import type { ItProjectKind } from "../api/api.model";
-import type { ItProjectPreview as ItProjectPreviewVm } from "../it-projects-preview/it-project-preview.vm";
+import type { ItProjectPreviewVm as ItProjectPreviewVm } from "../it-projects-preview/it-project-preview.vm";
 
 interface ItProjectPreviewProps {
   itProject: ItProjectPreviewVm;

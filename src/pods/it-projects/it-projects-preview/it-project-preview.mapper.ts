@@ -1,6 +1,6 @@
 import { mapperTechnologyApiToTechnologyVm } from "../../profile/technology/technology.mapper";
 import { ItProjectApi } from "../api/api.model";
-import { ItProjectPreview } from "./it-project-preview.vm";
+import { ItProjectPreviewVm } from "./it-project-preview.vm";
 
 // galleryAlt va en paralelo a gallery: el alt de la portada es el de su imagen en la galería
 const getCoverAlt = (project: ItProjectApi): string => {
@@ -14,7 +14,7 @@ const getCoverAlt = (project: ItProjectApi): string => {
 
 export function mapperItProjectApitoItProjectPreview(
   project: ItProjectApi,
-): ItProjectPreview {
+): ItProjectPreviewVm {
   return {
     title: project.title,
     slug: project.slug,
