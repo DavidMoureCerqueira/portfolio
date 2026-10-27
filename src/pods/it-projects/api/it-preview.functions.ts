@@ -1,6 +1,7 @@
 import { createServerFn } from "@tanstack/react-start";
 import { staticFunctionMiddleware } from "../../../common-app/static-function.middleware";
 import { ItProjectApi } from "./api.model";
+import { sortItProjects } from "./it-project.sort";
 import { client } from "../../../common-app/content-island.server";
 import { ItProjectPreviewVm } from "../it-projects-preview/it-project-preview.vm";
 import { mapperItProjectApitoItProjectPreview } from "../it-projects-preview/it-project-preview.mapper";
@@ -35,13 +36,9 @@ export const getItProjectsPreview = createServerFn({ method: "GET" })
         language: "es",
         includeRelatedContent: 1,
       });
-      itProjects.sort((a, b) => {
-        if (a.order === undefined && b.order === undefined) return 0;
-        if (a.order === undefined) return 1;
-        if (b.order === undefined) return -1;
-        return a.order - b.order;
-      });
-      return itProjects.map(mapperItProjectApitoItProjectPreview);
+      return sortItProjects(itProjects).map(
+        mapperItProjectApitoItProjectPreview,
+      );
     } catch (error) {
       console.error(`Error cargando previews de los proyectos: ${error}`);
       throw new Error("No se ha podido cargar la preview del proyecto", {

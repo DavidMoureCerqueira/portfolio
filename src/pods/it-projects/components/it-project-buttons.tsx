@@ -3,7 +3,8 @@ import { Button } from "../../../common-app/components";
 interface ItProjectButtonsProps {
   repoUrl?: string;
   demoUrl?: string;
-  slug: string;
+  // Con slug se pinta «Ver proyecto» (listado); en el detalle se omite
+  slug?: string;
 }
 
 export function ItProjectButtons({
@@ -11,13 +12,18 @@ export function ItProjectButtons({
   demoUrl,
   slug,
 }: ItProjectButtonsProps) {
-  console.log(slug);
   return (
     <div className="mt-auto flex flex-wrap gap-2 pt-6">
-      {/* TODO: enlazar a /it-projects/$slug cuando exista la ruta de detalle */}
-      <Button variant="principal" arrow>
-        Ver proyecto
-      </Button>
+      {slug && (
+        <Button
+          variant="principal"
+          to="/it-projects/$slug"
+          params={{ slug }}
+          arrow
+        >
+          Ver proyecto
+        </Button>
+      )}
       {demoUrl && (
         <Button variant="secundario" href={demoUrl} external arrow>
           Demo

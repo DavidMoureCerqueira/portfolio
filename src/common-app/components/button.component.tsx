@@ -9,6 +9,8 @@ interface Props {
   children: ReactNode;
   // Ruta interna: se pinta un Link del router (respeta la ruta base y no recarga)
   to?: LinkProps["to"];
+  // Parámetros de la ruta interna: to="/it-projects/$slug" params={{ slug }}
+  params?: LinkProps["params"];
   // Enlace externo o mailto: se pinta un <a>; sin to ni href, un <button>
   href?: string;
   external?: boolean;
@@ -35,6 +37,7 @@ export function Button({
   variant = "principal",
   children,
   to,
+  params,
   href,
   external = false,
   icon,
@@ -66,7 +69,7 @@ export function Button({
 
   if (to) {
     return (
-      <Link to={to} className={classes} onClick={onClick}>
+      <Link to={to} params={params} className={classes} onClick={onClick}>
         {content}
       </Link>
     );

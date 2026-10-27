@@ -1,14 +1,8 @@
-import { mapperTechnologyApiToTechnologyVm } from "../../profile/technology/technology.mapper";
+import { mapperTechnologyApiToTechnologyVm } from "../../../common-app/technology/technology.mapper";
 import { ItProjectApi } from "../api/api.model";
 import { ItProjectPreviewVm } from "./it-project-preview.vm";
-import type { ItProjectKind } from "../api/api.model";
-
-const kindLabels: Record<ItProjectKind, string> = {
-  practicas: "Prácticas",
-  academico: "Académico",
-  personal: "Personal",
-  freelance: "Freelance",
-};
+import { kindLabels } from "../api/it-project-kind.labels";
+import { isStatus } from "../../../common-app/models/status.model";
 
 export function mapperItProjectApitoItProjectPreview(
   project: ItProjectApi,
@@ -16,7 +10,7 @@ export function mapperItProjectApitoItProjectPreview(
   return {
     title: project.title,
     slug: project.slug,
-    status: project.status,
+    status: isStatus(project.status) ? project.status : "idea",
     summary: project.summary,
     kindLabel: kindLabels[project.kind],
     // Solo el año: "2026-06-01T00:00:00.000Z" → "2026"

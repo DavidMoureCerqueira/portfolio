@@ -1,5 +1,5 @@
 import type { Media } from "@content-island/api-client";
-import { TechnologyApi } from "../technology/api/api.model";
+import { TechnologyApi } from "../../../common-app/technology/technology.api-model";
 
 export interface ProfileApi {
   id: string;

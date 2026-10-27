@@ -1,4 +1,4 @@
-import { TechnologyVm } from "../technology/technology.vm";
+import { TechnologyVm } from "../../../common-app/technology/technology.vm";
 import { TimelineType } from "./api/api.model";
 
 export interface TimeLineEntryVm {

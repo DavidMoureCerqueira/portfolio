@@ -1,4 +1,4 @@
-import { TechnologyApi } from "./api/api.model";
+import { TechnologyApi } from "./technology.api-model";
 import { TechnologyVm } from "./technology.vm";
 
 export function mapperTechnologyApiToTechnologyVm(

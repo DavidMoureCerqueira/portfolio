@@ -1,5 +1,5 @@
 import type { Status } from "../../../common-app/components";
-import { TechnologyVm } from "../../profile/technology/technology.vm";
+import { TechnologyVm } from "../../../common-app/technology/technology.vm";
 
 export interface ItProjectPreviewVm {
   title: string;

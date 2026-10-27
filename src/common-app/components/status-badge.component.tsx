@@ -1,6 +1,7 @@
-// Refleja el enum de estados de Content Island
-export type Status =
-  "idea" | "pendiente" | "en-curso" | "pausado" | "finalizado";
+import type { Status } from "../models/status.model";
+
+// Se reexporta para que los imports desde components sigan funcionando
+export type { Status };
 
 interface Props {
   status: Status;

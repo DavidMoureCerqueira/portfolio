@@ -1,14 +1,19 @@
 import { useId, useState } from "react";
 import { TechIcon } from "../../../common-app/components";
-import { TechnologyVm } from "../../profile/technology/technology.vm";
+import { TechnologyVm } from "../../../common-app/technology/technology.vm";
 
 interface Props {
   technologies: TechnologyVm[];
+  // En el detalle se muestran todas, sin el «+N»
+  showAll?: boolean;
 }
 
-export function ItProjectTechnologyList({ technologies }: Props) {
+export function ItProjectTechnologyList({
+  technologies,
+  showAll = false,
+}: Props) {
   // En la tarjeta solo caben unas pocas tecnologías; el resto se resume en «+N»
-  const MAX_TECHNOLOGIES = 6;
+  const MAX_TECHNOLOGIES = showAll ? Infinity : 6;
 
   const [showAllTechnologies, setShowAllTechnologies] = useState(false);
   const technologiesId = useId();

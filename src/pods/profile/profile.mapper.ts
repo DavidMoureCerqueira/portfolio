@@ -1,6 +1,6 @@
 import { ProfileApi } from "./api/api.model";
 import { ProfileVm } from "./profile.vm";
-import { mapperTechnologyApiToTechnologyVmArray } from "./technology/technology.mapper";
+import { mapperTechnologyApiToTechnologyVmArray } from "../../common-app/technology/technology.mapper";
 
 export function mapperProfileApiToProfileVm(profile: ProfileApi): ProfileVm {
   return {

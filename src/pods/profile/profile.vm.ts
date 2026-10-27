@@ -1,4 +1,4 @@
-import { TechnologyVm } from "./technology/technology.vm";
+import { TechnologyVm } from "../../common-app/technology/technology.vm";
 
 export interface ProfileVm {
   name: string;

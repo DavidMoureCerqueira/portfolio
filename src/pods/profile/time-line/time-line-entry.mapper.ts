@@ -1,4 +1,4 @@
-import { mapperTechnologyApiToTechnologyVmArray } from "../technology/technology.mapper";
+import { mapperTechnologyApiToTechnologyVmArray } from "../../../common-app/technology/technology.mapper";
 import { TimelineEntryApi } from "./api/api.model";
 import { TimeLineEntryVm } from "./time-line-entry.vm";
 

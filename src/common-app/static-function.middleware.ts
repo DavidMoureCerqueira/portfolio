@@ -4,6 +4,7 @@ import {
   getDefaultSerovalPlugins,
   getSerovalPlugins,
 } from "@tanstack/react-start";
+import { notFound } from "@tanstack/react-router";
 import { fromJSON, toJSONAsync } from "seroval";
 
 /*
@@ -59,7 +60,11 @@ export const staticFunctionMiddleware = createMiddleware({ type: "function" })
       const response = await fetch(
         `${import.meta.env.BASE_URL}${CACHE_DIR}/${fileName}`,
       )
-        .then((r) => r.json())
+        .then((r) => {
+          // Sin JSON no se prerenderizó esa llamada (p. ej. un slug que no existe)
+          if (r.status === 404) throw notFound();
+          return r.json();
+        })
         .then(
           (d) =>
             fromJSON(d, {

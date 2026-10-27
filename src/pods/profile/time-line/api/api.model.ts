@@ -1,4 +1,4 @@
-import { TechnologyApi } from "../../technology/api/api.model";
+import { TechnologyApi } from "../../../../common-app/technology/technology.api-model";
 
 export type TimelineType = "practicas" | "laboral" | "formacion";
 

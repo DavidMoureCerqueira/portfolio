@@ -1,5 +1,5 @@
 import { SectionHeader, TechIcon } from "../../../common-app/components";
-import type { TechnologyVm } from "../technology/technology.vm";
+import type { TechnologyVm } from "../../../common-app/technology/technology.vm";
 
 interface Props {
   skills: TechnologyVm[];
