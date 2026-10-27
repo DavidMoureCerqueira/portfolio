@@ -8,18 +8,23 @@ interface ItProjectProps {
 
 export function ItProjectPreviewContainer({ projects }: ItProjectProps) {
   return (
-    <>
-      <SectionHeader
-        number={4}
-        name={"Proyectos IT"}
-        title={"Lo que he construido"}
-        lead={
-          "Recopilatorio de proyectos IT propios o en los que he participado. Entra en cualquiera para ver qué hace, por qué existe y cómo está hecho."
-        }
-      ></SectionHeader>
-      {projects.map((project) => (
-        <ItProjectPreview itProject={project} key={project.slug} />
-      ))}
-    </>
+    <section className="flex flex-col gap-8">
+      <header className="border-b border-line">
+        <SectionHeader
+          number={projects.length}
+          name="Proyectos IT"
+          title="Lo que he construido"
+          lead="Recopilatorio de proyectos IT propios o en los que he participado. Entra en cualquiera para ver qué hace, por qué existe y cómo está hecho."
+        />
+      </header>
+
+      <ul className="grid gap-6 md:grid-cols-2">
+        {projects.map((project) => (
+          <li key={project.slug}>
+            <ItProjectPreview itProject={project} />
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 }

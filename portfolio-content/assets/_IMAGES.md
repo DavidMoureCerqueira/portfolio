@@ -6,7 +6,6 @@ Todas en formato `.webp` (el CV en `.pdf`). Las carpetas ya están creadas: solo
 |---|---|
 | `profile/avatar.webp` | Mi foto para la Home |
 | `profile/cv-david-moure.pdf` | CV para el botón de descarga |
-| `it-projects/portfolio/cover.webp` | Captura del portfolio (cuando haya diseño) |
 | `cars/hyundai-scoupe-turbo/cover.webp` | Scoupe: foto del coche (portada) |
 | `cars/hyundai-scoupe-turbo/engine-bay.webp` | Scoupe: vano motor |
 | `cars/hyundai-scoupe-turbo/mods/manifolds.webp` | Scoupe: colectores de inox |

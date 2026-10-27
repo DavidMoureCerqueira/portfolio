@@ -25,7 +25,7 @@ export function SectionHeader({
   const cotaColor = tone === "accent" ? "text-accent-text" : "text-cota-text";
 
   return (
-    <header className="mb-12">
+    <header className="mb-6 md:mb-12">
       <div className="flex items-center gap-3">
         <span className={`text-cota whitespace-nowrap ${cotaColor}`}>
           {String(number).padStart(2, "0")} · {name}
