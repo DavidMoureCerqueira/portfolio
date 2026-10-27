@@ -38,3 +38,24 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Temporales del generador de rutas de TanStack
+.tanstack/
+
+# Salidas de build de TanStack Start / Nitro
+.output
+.nitro
+.vinxi
+
+# Cachés de herramientas
+*.tsbuildinfo
+.eslintcache
+coverage
+
+# Archivos de sistema de Windows
+Thumbs.db
+desktop.ini
+
+# Notas personales
+prompts.md
+MIGRACION_SSG.md
