@@ -19,17 +19,17 @@ export const Navbar = () => {
           className={linkClass}
           activeProps={activeProps}
         >
-          Home
+          Sobre mí
         </Link>
         <Link to="/it-projects" className={linkClass} activeProps={activeProps}>
-          IT Proyects
+          Proyectos IT
         </Link>
         <Link
           to="/personal-projects"
           className={linkClass}
           activeProps={activeAccentProps}
         >
-          Personal Proyects
+          Proyectos personales
         </Link>
       </nav>
       <ThemeToggle />
