@@ -1,8 +1,6 @@
 import type { Media } from "@content-island/api-client";
 import { TechnologyApi } from "../../../common-app/technology/technology.api-model";
-
-export type Status =
-  "idea" | "pendiente" | "en-curso" | "pausado" | "finalizado";
+import { Status } from "../../../common-app/models/status.model";
 
 export type ItProjectKind =
   "practicas" | "academico" | "personal" | "freelance";

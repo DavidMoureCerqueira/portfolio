@@ -1,9 +1,29 @@
 import type { Media } from "@content-island/api-client";
-import { Status } from "../../../../common-app/components";
-import { ModCategory } from "../../../../common-app/models/mod-category.model";
-import { ModTechnique } from "../../../../common-app/models/mod-technique.model";
+import type { Status } from "../../../../common-app/models/status.model";
 
-export interface ModificationAPI {
+export type ModCategory =
+  | "motor"
+  | "transmision"
+  | "suspension"
+  | "frenos"
+  | "chasis"
+  | "carroceria"
+  | "interior"
+  | "electricidad"
+  | "estetica";
+
+export type ModTechnique =
+  | "soldadura"
+  | "impresion-3d"
+  | "restauracion"
+  | "pintura"
+  | "mecanizado"
+  | "electronica"
+  | "fibra"
+  | "tapiceria"
+  | "mecanica";
+
+export interface ModificationApi {
   id: string;
   language: "es";
   lastUpdate: string; // Stores the date in ISO 8601 format. For example: 2021-09-10T19:30:00.000Z

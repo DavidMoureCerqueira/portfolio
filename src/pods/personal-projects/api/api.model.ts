@@ -1,7 +1,8 @@
 import type { Media } from "@content-island/api-client";
-import { Status } from "../../../common-app/components";
+import { Status } from "../../../common-app/models/status.model";
+import { ModificationApi } from "../modifications/api/api.model";
 
-export interface CarProject {
+export interface CarProjectApi {
   id: string;
   language: "es";
   lastUpdate: string; // Stores the date in ISO 8601 format. For example: 2021-09-10T19:30:00.000Z
@@ -22,6 +23,6 @@ export interface CarProject {
   gallery?: Media[];
   galleryAlt?: string[];
   content: string;
-  modifications?: string[]; // Stores the ID of the related entity
+  modifications?: ModificationApi[];
   coverAlt?: string;
 }

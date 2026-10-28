@@ -1,6 +1,6 @@
-import { Status } from "../../../common-app/components";
+import type { Status } from "../../../common-app/models/status.model";
 
-export interface CarProjectVM {
+export interface CarProjectPreviewVm {
   title: string;
   slug: string;
   status: Status;
@@ -9,10 +9,8 @@ export interface CarProjectVM {
   version?: string;
   year: number;
   engine?: string;
-  acquiredDate?: string; // Stores the date in ISO 8601 format. For example: 2021-09-10T19:30:00.000Z
   summary: string;
-  goals?: string;
   cover: { url: string; alt: string };
-  content: string;
   progress: Record<Status, number>;
+  techniques: string[];
 }
