@@ -18,6 +18,7 @@ goals: |
   - [ ] Llevarlo a circuito
 modifications: [scoupe-engine-turbo, scoupe-cooling, scoupe-ecu, scoupe-alternator-relocation, scoupe-suspension, scoupe-front-brakes, scoupe-rear-brakes, scoupe-battery-relocation, scoupe-interior]
 cover: assets/cars/hyundai-scoupe-turbo/cover.webp
+coverAlt: "Hyundai Scoupe Turbo rojo aparcado en un garaje"
 gallery:
   - src: assets/cars/hyundai-scoupe-turbo/engine-bay.webp
     alt: Vano motor del Scoupe con el turbo, los colectores y la refrigeración modificada

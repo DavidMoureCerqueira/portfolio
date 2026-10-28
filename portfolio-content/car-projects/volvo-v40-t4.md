@@ -18,6 +18,7 @@ goals: |
   - [ ] Usarlo en circuito manteniendo esa potencia
 modifications: [v40-engine-turbo, v40-exhaust, v40-suspension, v40-brakes, v40-interior]
 cover: assets/cars/volvo-v40-t4/cover.webp
+coverAlt: "Volvo V40 T4 rojo con llantas plateadas aparcado en un garaje"
 gallery: []
 ---
 

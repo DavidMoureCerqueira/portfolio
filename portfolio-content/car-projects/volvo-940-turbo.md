@@ -18,6 +18,7 @@ goals: |
   - [ ] Llegar a los 300 CV
 modifications: [volvo940-engine-turbo-gearbox, volvo940-suspension, volvo940-exhaust, volvo940-road-to-300hp, volvo940-interior]
 cover: assets/cars/volvo-940-turbo/cover.webp
+coverAlt: "Volvo 940 Turbo azul derrapando en una tanda en circuito"
 gallery: []
 ---
 

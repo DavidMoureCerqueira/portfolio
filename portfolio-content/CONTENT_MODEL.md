@@ -98,6 +98,7 @@ Se reutiliza en Profile, TimelineEntry y ItProject: si cambias un icono, cambia 
 | goals        | Markdown (checklist) | No | `- [x]` cumplida, `- [ ]` pendiente |
 | modifications | Lista de referencias → Modification | No | Ordenadas |
 | cover        | Media | Sí | |
+| coverAlt     | Texto corto | No | Texto alternativo de la portada |
 | gallery      | Lista de media | No | |
 | galleryAlt   | Lista de texto corto | No | Un alt por imagen de `gallery`, en el mismo orden |
 | content      | Markdown | Sí | Historia, compra, estado inicial |

@@ -19,6 +19,7 @@ goals: |
   - [x] Meta ya cumplida
 modifications: []        # ids de modifications/, en el orden a mostrar
 cover: assets/cars/[slug]/cover.webp
+coverAlt: "[RELLENAR] Qué se ve en la portada"
 gallery:
   - src: assets/cars/[slug]/01.webp
     alt: "[RELLENAR]"
