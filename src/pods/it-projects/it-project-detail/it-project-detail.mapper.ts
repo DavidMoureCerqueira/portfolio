@@ -2,7 +2,7 @@ import { isStatus } from "../../../common-app/models/status.model";
 import { mapperTechnologyApiToTechnologyVm } from "../../../common-app/technology/technology.mapper";
 import type { ItProjectApi } from "../api/api.model";
 import { kindLabels } from "../api/it-project-kind.labels";
-import { formatProjectDates } from "./format-project-dates";
+import { formatProjectDates } from "../../../common-app/dates/format-dates";
 import type {
   ItProjectDetailVm,
   ItProjectLinkVm,

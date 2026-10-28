@@ -20,6 +20,13 @@ const parseDate = (date: string) => ({
   year: date.slice(0, 4),
 });
 
+// Una sola fecha: «Dic 2016» · «»
+export function formatMonthYear(date?: string) {
+  if (!date) return "";
+  const { month, year } = parseDate(date);
+  return `${month} ${year}`;
+}
+
 // «Mar – Jun 2026» · «Ago 2025 – Mar 2026» · «Oct 2026 – hoy» · «»
 export function formatProjectDates(startDate?: string, endDate?: string) {
   if (!startDate && !endDate) return "";

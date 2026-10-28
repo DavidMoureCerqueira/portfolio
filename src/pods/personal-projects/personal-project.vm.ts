@@ -1,20 +1,32 @@
-import { Status } from "../../common-app/models/status.model";
-import { ModificationVm } from "./modifications/modification.vm";
+import type { Status } from "../../common-app/models/status.model";
+import type { ModificationVm } from "./modifications/modification.vm";
 
-export interface CarProjectApi {
-  title: string;
+export interface CarGoalVm {
+  label: string;
+  done: boolean;
+}
+
+export interface CarProjectDetailVm {
   slug: string;
+  title: string;
   status: Status;
-  featured: boolean;
   brand: string;
   model: string;
   version?: string;
   year: number;
   engine?: string;
-  acquiredDate?: string; // Stores the date in ISO 8601 format. For example: 2021-09-10T19:30:00.000Z
+  // Línea técnica corta en mono: "1994 · 1.5 turbo · 116 CV"
+  spec: string;
+  acquiredDate?: string; // "Dic 2016"
   summary: string;
-  goals?: string;
+  goals: CarGoalVm[];
   cover: { url: string; alt: string };
+  gallery: { url: string; alt: string }[];
   content: string;
-  modifications?: ModificationVm[];
+  progress: Record<Status, number>;
+  modificationsTotal: number;
+  // "9 modificaciones · 6 finalizadas · 2 en curso · 1 pendiente"
+  progressLabel: string;
+  techniques: string[];
+  modifications: ModificationVm[];
 }
