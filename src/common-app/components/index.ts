@@ -11,3 +11,8 @@ export * from "./card.component";
 export * from "./cover.component";
 export * from "./tag-list.component";
 export * from "./accent-stripe.component";
+export * from "./breadcrumb.component";
+export * from "./facts-band.component";
+export * from "./section-cota.component";
+export * from "./markdown-content";
+export * from "./prev-next-nav.component";

@@ -1,4 +1,4 @@
-import { ItProjectSectionCota } from "./it-project-section-cota";
+import { SectionCota } from "../../../common-app/components";
 
 interface Props {
   // Sigue la numeración de las secciones del contenido
@@ -9,7 +9,7 @@ interface Props {
 export function ItProjectGallery({ number, gallery }: Props) {
   return (
     <section className="max-w-200">
-      <ItProjectSectionCota number={number} name="Capturas" />
+      <SectionCota number={number} name="Capturas" />
       <ul className="grid gap-6 sm:grid-cols-2">
         {gallery.map((image) => (
           <li key={image.url}>

@@ -1,32 +1,36 @@
+import type { Fact } from "../../common-app/components";
 import type { Status } from "../../common-app/models/status.model";
 import type { ModificationVm } from "./modifications/modification.vm";
 
 export interface CarGoalVm {
-  label: string;
+  text: string;
   done: boolean;
+}
+
+export interface CarProjectLinkVm {
+  slug: string;
+  title: string;
 }
 
 export interface CarProjectDetailVm {
   slug: string;
   title: string;
-  status: Status;
-  brand: string;
-  model: string;
-  version?: string;
-  year: number;
-  engine?: string;
-  // Línea técnica corta en mono: "1994 · 1.5 turbo · 116 CV"
+  // Línea técnica corta en mono, la misma que en el listado: "1994 · 1.5 turbo · 116 CV"
   spec: string;
-  acquiredDate?: string; // "Dic 2016"
+  status: Status;
   summary: string;
-  goals: CarGoalVm[];
   cover: { url: string; alt: string };
-  gallery: { url: string; alt: string }[];
-  content: string;
+  // Marca, Modelo (+ versión), Año, Motor, Comprado
+  facts: Fact[];
+  goals: CarGoalVm[];
   progress: Record<Status, number>;
   modificationsTotal: number;
   // "9 modificaciones · 6 finalizadas · 2 en curso · 1 pendiente"
   progressLabel: string;
-  techniques: string[];
+  // Markdown: El coche, Cómo llegó a mí, Estado inicial, Planteamiento
+  content: string;
+  // En el orden en que están referenciadas en el coche
   modifications: ModificationVm[];
+  prev: CarProjectLinkVm;
+  next: CarProjectLinkVm;
 }

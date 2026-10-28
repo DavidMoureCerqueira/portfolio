@@ -104,8 +104,8 @@ interface Props {
   children: string;
 }
 
-// Markdown del detalle con los elementos del sistema de diseño (el Markdown común no se toca)
-export function ItProjectMarkdown({ children }: Props) {
+// Markdown de los detalles (proyectos IT y coches) con los elementos del sistema de diseño (el Markdown común no se toca)
+export function ContentMarkdown({ children }: Props) {
   return (
     <div className="flex flex-col gap-4">
       <ReactMarkdown remarkPlugins={[remarkGfm]} components={components}>
