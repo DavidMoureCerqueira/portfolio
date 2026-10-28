@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { AccentStripe } from "./accent-stripe.component";
 
 interface Props {
   // Numeración correlativa dentro de cada página: 1 → «01»
@@ -11,6 +12,8 @@ interface Props {
   tone?: "brand" | "accent";
   // Franja amarilla bajo el título, solo en la cabecera de Proyectos personales
   stripe?: boolean;
+  // "h1" cuando la cabecera es el título de la página
+  titleAs?: "h1" | "h2";
 }
 
 export function SectionHeader({
@@ -21,6 +24,7 @@ export function SectionHeader({
   action,
   tone = "brand",
   stripe = false,
+  titleAs: Title = "h2",
 }: Props) {
   const cotaColor = tone === "accent" ? "text-accent-text" : "text-cota-text";
 
@@ -37,10 +41,8 @@ export function SectionHeader({
       </div>
       <div className="mt-3 flex flex-wrap items-end justify-between gap-4">
         <div>
-          <h2 className="text-heading text-ink">{title}</h2>
-          {stripe && (
-            <span className="mt-3 franja-accent w-24" aria-hidden="true" />
-          )}
+          <Title className="text-heading text-ink">{title}</Title>
+          {stripe && <AccentStripe size="lg" className="mt-3" />}
           {lead && <p className="mt-3 text-lead text-ink-muted">{lead}</p>}
         </div>
         {action}

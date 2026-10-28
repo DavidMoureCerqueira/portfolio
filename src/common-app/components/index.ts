@@ -7,3 +7,7 @@ export * from "./tech-icon.component";
 export * from "./markdown.component";
 export * from "./route-error.component";
 export * from "./not-found.component";
+export * from "./card.component";
+export * from "./cover.component";
+export * from "./tag-list.component";
+export * from "./accent-stripe.component";

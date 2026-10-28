@@ -1,3 +1,5 @@
+import { Cover } from "../../../common-app/components";
+
 interface ItProjectCoverProps {
   cover: { url: string; alt: string };
   horizontal?: boolean;
@@ -12,20 +14,18 @@ export function ItProjectCover({
 }: ItProjectCoverProps) {
   if (variant === "detail") {
     return (
-      <img
-        className="aspect-video w-full rounded-lg border border-line object-cover object-top"
-        src={cover.url}
-        alt={cover.alt}
+      <Cover
+        cover={cover}
+        loading="eager"
+        className="aspect-video rounded-lg border border-line object-top"
       />
     );
   }
 
   return (
-    <img
-      className={`aspect-video w-full border-b border-line object-cover object-top ${horizontal ? "md:aspect-auto md:h-full md:border-r md:border-b-0" : ""}`}
-      src={cover.url}
-      alt={cover.alt}
-      loading="lazy"
+    <Cover
+      cover={cover}
+      className={`aspect-video border-b border-line object-top ${horizontal ? "md:aspect-auto md:h-full md:border-r md:border-b-0" : ""}`}
     />
   );
 }

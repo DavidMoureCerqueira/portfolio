@@ -319,10 +319,10 @@
   mask: var(--icon-url) center / contain no-repeat;
 }
 
-/* Franja amarilla de Proyectos personales: se dibuja de izquierda a derecha */
+/* Franja amarilla de Proyectos personales: se dibuja de izquierda a derecha.
+   El alto y el ancho los pone AccentStripe según su tamaño */
 @utility franja-accent {
   display: block;
-  height: 8px;
   border-radius: var(--radius-full);
   background-color: var(--color-accent);
   transform-origin: left;

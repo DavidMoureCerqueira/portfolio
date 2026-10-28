@@ -1,16 +1,16 @@
 import type { Status } from "../../../common-app/models/status.model";
 
 export interface CarProjectPreviewVm {
-  title: string;
   slug: string;
+  title: string;
+  // Línea técnica corta en mono: "1994 · 1.5 turbo · 116 CV"
+  spec: string;
   status: Status;
-  brand: string;
-  model: string;
-  version?: string;
-  year: number;
-  engine?: string;
   summary: string;
   cover: { url: string; alt: string };
   progress: Record<Status, number>;
+  modificationsTotal: number;
+  // "9 modificaciones · 6 finalizadas · 2 en curso · 1 pendiente"
+  progressLabel: string;
   techniques: string[];
 }

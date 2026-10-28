@@ -8,6 +8,9 @@ export const Route = createFileRoute("/personal-projects")({
     const carProjectsPreview = await getCarProjectsPreview();
     return { carProjectsPreview };
   },
+  head: () => ({
+    meta: [{ title: "Proyectos personales · David Moure Cerqueira" }],
+  }),
   staleTime: 5 * 60 * 1000,
   component: PersonalProjectsScene,
   pendingComponent: () => <p className="text-cota text-ink-muted">Cargando…</p>,
