@@ -1,5 +1,14 @@
+import { CarProjectPreviewVm } from "./personal-project-preview/personal-project-preview.vm";
 import { PersonalProjectsComponent } from "./personal-project.component";
 
-export function PersonalProjectContainer() {
+interface PersonalProjectContainerProps {
+  carProjects: CarProjectPreviewVm[];
+}
+
+export function PersonalProjectContainer({
+  carProjects,
+}: PersonalProjectContainerProps) {
+  console.log(carProjects);
+
   return <PersonalProjectsComponent />;
 }

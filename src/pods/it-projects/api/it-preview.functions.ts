@@ -40,7 +40,7 @@ export const getItProjectsPreview = createServerFn({ method: "GET" })
         mapperItProjectApitoItProjectPreview,
       );
     } catch (error) {
-      console.error(`Error cargando previews de los proyectos: ${error}`);
+      console.error(`Error cargando previews de los proyectos it: ${error}`);
       throw new Error("No se ha podido cargar la preview del proyecto", {
         cause: error,
       });
