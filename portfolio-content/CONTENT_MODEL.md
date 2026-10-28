@@ -114,9 +114,8 @@ Se reutiliza en Profile, TimelineEntry y ItProject: si cambias un icono, cambia 
 | difficulty  | Número (1–5) | No | |
 | startDate / endDate | Fecha | No | |
 | summary     | Texto corto | Sí | 1–2 líneas: es la parte principal de la ficha |
-| beforeImage / afterImage | Media | No | Para un comparador antes/después |
-| gallery     | Lista de media | No | 1–2 fotos como máximo: es un portfolio tech, no un reportaje |
-| galleryAlt  | Lista de texto corto | No | Un alt por imagen de `gallery`, en el mismo orden |
+| image       | Media | No | Una sola foto de la modificación |
+| imageAlt    | Texto corto | No | Texto alternativo de `image` |
 | content     | Markdown | No | Solo en las modificaciones con algo que contar: motivo, proceso, resultado |
 
 ## Estructura de carpetas

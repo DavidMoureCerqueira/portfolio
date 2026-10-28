@@ -9,5 +9,6 @@ techniques: [mecanica]
 startDate: null
 endDate: null
 summary: Suspensión GAZ y barra de torretas específica para el Scoupe, que tuve que adaptar.
-gallery: []
+image: ""
+imageAlt: ""
 ---

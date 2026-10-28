@@ -36,9 +36,7 @@ export interface ModificationApi {
   startDate?: string; // Stores the date in ISO 8601 format. For example: 2021-09-10T19:30:00.000Z
   endDate?: string; // Stores the date in ISO 8601 format. For example: 2021-09-10T19:30:00.000Z
   summary: string;
-  beforeImage?: Media;
-  afterImage?: Media;
-  gallery?: Media[];
-  galleryAlt?: string[];
+  image?: Media;
+  imageAlt?: string;
   content?: string;
 }

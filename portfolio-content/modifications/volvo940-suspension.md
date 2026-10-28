@@ -9,5 +9,6 @@ techniques: [mecanica]
 startDate: null
 endDate: null
 summary: Suspensión roscada BC Racing y todos los silentblocks de poliuretano.
-gallery: []
+image: ""
+imageAlt: ""
 ---

@@ -9,5 +9,6 @@ techniques: [electronica]
 startDate: null
 endDate: null
 summary: Traslado de la batería al maletero.
-gallery: []
+image: ""
+imageAlt: ""
 ---

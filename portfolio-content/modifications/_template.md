@@ -9,7 +9,8 @@ techniques: []           # soldadura | impresion-3d | restauracion | pintura | m
 startDate: null
 endDate: null
 summary: "[RELLENAR] 1–2 líneas"
-gallery: []              # 1–2 fotos como máximo
+image: ""               # una foto de la modificación
+imageAlt: ""
 ---
 
 <!-- Opcional: solo si hay algo que contar (motivo, proceso, resultado) en un párrafo corto. -->

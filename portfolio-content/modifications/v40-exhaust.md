@@ -9,5 +9,6 @@ techniques: [soldadura]
 startDate: null
 endDate: null
 summary: Línea de escape completa en 3", hecha por mí.
-gallery: []
+image: ""
+imageAlt: ""
 ---

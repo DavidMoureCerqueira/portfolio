@@ -9,5 +9,6 @@ techniques: [mecanica]
 startDate: null
 endDate: null
 summary: Conversión a discos traseros combinando piezas de otros modelos de Hyundai.
-gallery: []
+image: ""
+imageAlt: ""
 ---

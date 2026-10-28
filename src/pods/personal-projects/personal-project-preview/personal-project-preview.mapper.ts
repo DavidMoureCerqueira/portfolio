@@ -50,7 +50,7 @@ function mapProgressToLabel(
   );
 }
 
-function mapModificationsToTechniques(
+export function mapModificationsToTechniques(
   modifications: ModificationApi[] = [],
 ): string[] {
   const techniques = modifications
