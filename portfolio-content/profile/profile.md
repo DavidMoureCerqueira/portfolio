@@ -3,11 +3,11 @@ _model: Profile
 id: profile
 name: David Moure Cerqueira
 role: Desarrollador Full Stack Junior
-headline: "Perseverante por naturaleza: puedo parar a coger aire, pero no me rindo."
+headline: "Full-Stack Developer Jr. | Especializado en el desarrollo web moderno con TypeScript"
 avatar: assets/profile/avatar.webp            # la añade David
 location: A Coruña, Galicia
 availability: Disponible para incorporación inmediata
-skills: [typescript, react, nextjs, angular, bun, nodejs, python, fastapi, flask, java, html5, css, mysql, sqlite, docker]
+skills: [typescript, react, nextjs, angular, bun, nodejs, python, fastapi, flask, java, html5, css, mysql, sqlite, docker, tanstack-start, tailwindcss, vite, contentisland, vitest, git, githubactions, claude, mcp]
 softSkills:
   - Capacidad de investigación
   - Autoaprendizaje
@@ -31,10 +31,10 @@ linkedinUrl: https://www.linkedin.com/in/david-moure-cerqueira
 cv: assets/profile/cv-david-moure.pdf
 ---
 
-Soy desarrollador Full Stack junior y disfruto trabajando en todo el stack: en el backend con Bun, Node.js, FastAPI y Flask, y en el frontend con React, Next.js y Angular, apoyado en bases de datos relacionales y Docker.
+Soy desarrollador Full Stack junior, con experiencia trabajando tanto en backend como en frontend. Me gusta desenvolverme en todo el stack, utilizando tecnologías como Node.js, Bun, FastAPI y Flask en el backend, y React, Next.js y Angular en el frontend, junto con bases de datos relacionales y Docker.
 
-Antes de escribir código pasé seis años como mecánico de automoción. Allí aprendí a diagnosticar antes de cambiar piezas, a trabajar con método y a resolver problemas con el cliente esperando. Es la misma forma de pensar que aplico hoy al depurar una aplicación. En 2024 di el salto al ciclo superior de Desarrollo de Aplicaciones Web, en el que me titulé en 2026 tras hacer las prácticas en DEUS, una empresa muy exigente con la calidad del código.
+Antes de dedicarme al desarrollo de software, trabajé durante seis años como mecánico de automoción. Esta etapa me permitió desarrollar una mentalidad analítica, capacidad de diagnóstico y resolución de problemas, habilidades que hoy aplico al desarrollo y la depuración de aplicaciones.
 
-Ahora estoy cursando el programa de especialización en Front End moderno y herramientas de Inteligencia Artificial de Lemoncode, patrocinado por Luckia. Este portfolio es mi TFM.
+Ahora estoy cursando el programa de especialización en Front End moderno y herramientas de Inteligencia Artificial de Lemoncode, patrocinado por Luckia.
 
-Soy curioso, aprendo rápido y me adapto bien a tecnologías nuevas. Busco una primera posición estable donde seguir creciendo como Full Stack y aportar valor desde el primer día.
+Busco incorporarme a un equipo de desarrollo en el que pueda crecer profesionalmente, afrontar nuevos retos y contribuir al desarrollo de proyectos.

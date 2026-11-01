@@ -5,8 +5,8 @@ title: Producción y logística
 organization: Galican · Ternura
 type: laboral
 isTech: false
-startDate: "2021"
-endDate: "2024"
+startDate: "2021-01-01"
+endDate: "2024-01-01"
 location: null
 summary: Montaje en cadena de producción y, después, jefe de almacén.
 technologies: []

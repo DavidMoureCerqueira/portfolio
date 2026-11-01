@@ -10,8 +10,8 @@ kind: practicas
 summary: Automatización del onboarding en DEUS que cubre en torno al 70 % del trabajo de RR. HH. en cada nueva incorporación.
 role: Desarrollo en equipo de dos
 teamSize: 2
-startDate: "2026-03"
-endDate: "2026-06"
+startDate: "2026-03-01"
+endDate: "2026-06-01"
 technologies: [bun, typescript, notion, slack, googleworkspace]
 repoUrl: ""
 demoUrl: ""

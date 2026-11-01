@@ -10,7 +10,7 @@ kind: academico
 summary: Mi portfolio personal y TFM de Lemoncode, hecho en React y alimentado por Content Island como headless CMS.
 role: Desarrollo completo
 teamSize: 1
-startDate: "2026-10"
+startDate: "2026-10-01"
 endDate: null
 technologies: [react, typescript, vite, react-router, tailwindcss, daisyui, contentisland, claude, eslint, prettier]
 repoUrl: https://github.com/DavidMoureCerqueira/portfolio

@@ -1,30 +1,12 @@
 import { SectionHeader, TechIcon } from "../../../common-app/components";
-import type { TechnologyVm } from "../../../common-app/technology/technology.vm";
+import type { SkillGroupVm } from "../profile.vm";
 
 interface Props {
-  skills: TechnologyVm[];
+  groups: SkillGroupVm[];
 }
 
-// Orden y nombre visible de las categorías de Technology en Content Island
-const categories: Record<string, string> = {
-  frontend: "Frontend",
-  backend: "Backend",
-  database: "Bases de datos",
-  devops: "DevOps",
-  testing: "Testing",
-  tooling: "Herramientas",
-  design: "Diseño",
-};
-
-export function ProfileStack({ skills }: Props) {
-  if (skills.length === 0) return null;
-
-  const groups = Object.entries(categories)
-    .map(([category, label]) => ({
-      label,
-      skills: skills.filter((skill) => skill.category === category),
-    }))
-    .filter((group) => group.skills.length > 0);
+export function ProfileStack({ groups }: Props) {
+  if (groups.length === 0) return null;
 
   return (
     <section className="mt-12 md:mt-20">

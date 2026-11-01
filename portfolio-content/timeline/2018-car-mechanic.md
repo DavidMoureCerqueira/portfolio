@@ -5,8 +5,8 @@ title: Oficial de 2ª · Mecánico de automoción
 organization: Feuvert · Talleres La Telva · Don Ruidoso
 type: laboral
 isTech: false
-startDate: "2018"
-endDate: "2024-10"
+startDate: "2018-01-01"
+endDate: "2024-10-01"
 location: A Coruña
 summary: Seis años en taller entre mantenimiento, diagnóstico y reparación.
 technologies: []

@@ -1,5 +1,10 @@
 import { TechnologyVm } from "../../common-app/technology/technology.vm";
 
+export interface SkillGroupVm {
+  label: string;
+  skills: TechnologyVm[];
+}
+
 export interface ProfileVm {
   name: string;
   role: string;
@@ -12,7 +17,7 @@ export interface ProfileVm {
   linkedinUrl: string;
   cvUrl?: string;
   content: string;
-  skills: TechnologyVm[];
+  skillGroups: SkillGroupVm[];
   softSkills: string[];
   interest: string[];
   languages: string[];

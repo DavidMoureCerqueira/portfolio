@@ -5,8 +5,8 @@ title: Desarrollador web · Prácticas
 organization: Minsait
 type: practicas
 isTech: true
-startDate: "2025-05"
-endDate: "2025-06"
+startDate: "2025-05-01"
+endDate: "2025-06-01"
 location: Remoto
 summary: Un mes de prácticas formativas en primer curso con frontend responsive, Java y SQL.
 technologies: [html5, css, javascript, java, mysql]

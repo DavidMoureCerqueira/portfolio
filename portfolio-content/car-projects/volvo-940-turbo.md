@@ -10,8 +10,8 @@ brand: Volvo
 model: "940"
 version: Turbo
 year: 1990
-engine: 2.3 turbo · 165 CV de serie, unos 200 CV actualmente
-acquiredDate: "2018"
+engine: "2.3 turbo · 165 CV"
+acquiredDate: "2018-01-01"
 summary: Mi coche de drift. Motor rehecho, caja M90 y escape hecho por mí, con el objetivo de llegar a los 300 CV.
 goals: |
   - [x] Rodar en tandas de drift

@@ -11,7 +11,7 @@ model: "[RELLENAR]"
 version: "[RELLENAR] acabado / versión"
 year: 0000
 engine: "[RELLENAR] cilindrada, combustible, CV"
-acquiredDate: "YYYY-MM"
+acquiredDate: "YYYY-MM-DD"
 summary: "[RELLENAR] Una línea para la tarjeta"
 goals: |
   - [ ] [RELLENAR] Meta 1

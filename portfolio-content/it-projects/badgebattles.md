@@ -10,8 +10,8 @@ kind: academico
 summary: Simulador de combates Pokémon en Flask en el que cada victoria da una medalla, hasta conseguir las 8.
 role: Desarrollo en pareja
 teamSize: 2
-startDate: "2025-08"
-endDate: "2026-03"
+startDate: "2025-08-01"
+endDate: "2026-03-01"
 technologies: [python, flask, sqlite, pokeapi, html5, tailwindcss, daisyui]
 repoUrl: https://github.com/DavidMoureCerqueira/BadgeBattles
 demoUrl: ""

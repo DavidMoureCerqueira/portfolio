@@ -10,8 +10,8 @@ brand: Volvo
 model: V40
 version: T4
 year: 2000
-engine: Turbo · 200 CV de serie, ahora 300 CV con bloque 1.9 y culata 2.0
-acquiredDate: "2019"
+engine: "Turbo · 200 CV"
+acquiredDate: "2019-01-01"
 summary: Comprado para el día a día y convertido en coche de circuito que sigue pudiendo andar por la calle. 300 CV.
 goals: |
   - [x] Llegar a los 300 CV

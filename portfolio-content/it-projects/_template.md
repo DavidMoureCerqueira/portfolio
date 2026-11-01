@@ -10,7 +10,7 @@ kind: personal           # practicas | academico | personal | freelance
 summary: "[RELLENAR] Qué hace, en 1–2 líneas"
 role: "[RELLENAR] Frontend / Full stack"
 teamSize: 1
-startDate: "YYYY-MM"
+startDate: "YYYY-MM-DD"
 endDate: null
 technologies: [react, typescript]
 repoUrl: ""

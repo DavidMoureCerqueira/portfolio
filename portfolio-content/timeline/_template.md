@@ -5,8 +5,8 @@ title: "[RELLENAR] Puesto"
 organization: "[RELLENAR] Empresa o centro"
 type: practicas          # practicas | laboral | formacion
 isTech: true
-startDate: "YYYY-MM"
-endDate: "YYYY-MM"       # null si sigue en curso
+startDate: "YYYY-MM-DD"
+endDate: "YYYY-MM-DD"       # null si sigue en curso
 location: "[RELLENAR] Ciudad / Remoto"
 summary: "[RELLENAR] Una línea: qué hiciste allí"
 technologies: []         # ids de technologies/, solo si aplica

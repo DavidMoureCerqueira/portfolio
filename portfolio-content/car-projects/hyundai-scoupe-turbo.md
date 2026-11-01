@@ -10,8 +10,8 @@ brand: Hyundai
 model: Scoupe
 version: Turbo
 year: 1994
-engine: 1.5 turbo · 116 CV de serie
-acquiredDate: "2016"
+engine: "1.5 turbo · 116 CV"
+acquiredDate: "2016-12-20"
 summary: Mi primer coche. Turbo más grande, MegaSquirt cableada por mí y piezas diseñadas en 3D, camino de los 220 CV.
 goals: |
   - [ ] Llegar a los 220 CV

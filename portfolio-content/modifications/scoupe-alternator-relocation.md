@@ -9,6 +9,6 @@ techniques: [mecanica]
 startDate: null
 endDate: null
 summary: Paso del alternador a la parte trasera del motor por temas de temperatura.
-image: assets/cars/hyundai-scoupe-turbo/mods/alternator.webp
-imageAlt: Traslado del alternador en proceso
+image: ""               # pendiente de subir: assets/cars/hyundai-scoupe-turbo/mods/alternator.webp
+imageAlt: ""            # pendiente: Traslado del alternador en proceso
 ---

@@ -5,8 +5,8 @@ title: Desarrollador Full Stack · Prácticas (FCT)
 organization: DEUS
 type: practicas
 isTech: true
-startDate: "2026-03"
-endDate: "2026-06"
+startDate: "2026-03-01"
+endDate: "2026-06-01"
 location: A Coruña · Híbrido
 summary: Novus, herramienta interna para reducir la carga de trabajo de RR. HH. en cada incorporación.
 technologies: [bun, typescript, react, nextjs, mantine]

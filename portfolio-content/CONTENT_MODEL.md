@@ -8,7 +8,7 @@ Este documento es el "contrato" entre los README y Content Island. Si no coincid
 - **`_model`** indica a qué modelo pertenece el archivo. **`id`** es un slug único (`seat-ibiza-6k`, `react`) y sirve para relacionar entradas entre sí.
 - **Relaciones**: se escriben con el `id` de la otra entrada (`technologies: [react, typescript]`). Al subirlas se convierten en referencias reales.
 - **Imágenes**: ruta relativa dentro de `assets/` (`assets/cars/ibiza/cover.webp`). Se suben a la galería de medios y se enlazan al campo.
-- **Fechas**: formato `YYYY-MM`, o `YYYY-MM-DD` si se conoce el día. `endDate: null` significa "actualidad".
+- **Fechas**: formato `YYYY-MM-DD`, que es el tipo fecha de Content Island. Si solo se conoce el mes, se usa el día `01` (`2024-09-01`). `endDate: null` significa "actualidad".
 - **Archivos que empiezan por `_`** (`_template.md`) son plantillas y no se suben.
 
 ## Estados (compartido por todos los proyectos y modificaciones)

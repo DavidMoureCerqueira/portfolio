@@ -13,11 +13,8 @@ export function ProfileHero({ profile }: Props) {
       <div className="grid items-center gap-12 md:grid-cols-[1fr_auto]">
         <div className="animate-reveal">
           {profile.availability && (
-            <p className="inline-flex items-center gap-2 rounded-full bg-success-soft px-3 py-1 text-cota text-success">
-              <span
-                className="size-2 animate-pulse-soft rounded-full bg-success"
-                aria-hidden="true"
-              />
+            <p className="inline-flex items-center gap-2 rounded-full bg-success-soft px-3 py-1 text-code text-success">
+              <span className="rounded-full bg-success" aria-hidden="true" />
               {profile.availability}
             </p>
           )}

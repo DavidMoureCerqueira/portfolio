@@ -13,7 +13,7 @@ export function ProfileComponent({ profile }: Props) {
     <div>
       <ProfileHero profile={profile} />
       <ProfileAbout profile={profile} />
-      <ProfileStack skills={profile.skills} />
+      <ProfileStack groups={profile.skillGroups} />
       <ProfileSoftSkills softSkills={profile.softSkills} />
     </div>
   );

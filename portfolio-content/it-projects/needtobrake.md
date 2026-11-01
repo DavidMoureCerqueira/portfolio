@@ -10,8 +10,8 @@ kind: academico
 summary: Buscador y comparador visual a escala de discos de freno, con foro y garaje virtual. Mi proyecto de fin de ciclo.
 role: Full stack
 teamSize: 1
-startDate: "2026-03"
-endDate: "2026-06"
+startDate: "2026-03-01"
+endDate: "2026-06-01"
 technologies: [angular, typescript, tailwindcss, daisyui, konva, python, fastapi, sqlmodel, alembic, mysql, jwt, docker, cloudinary, githubactions, netlify, render, aiven]
 repoUrl: https://github.com/DavidMoureCerqueira/NeedToBrakeApp
 demoUrl: https://needtobrake.netlify.app
