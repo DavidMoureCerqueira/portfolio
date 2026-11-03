@@ -11,7 +11,7 @@
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
-    "verbatimModuleSyntax": false, /* TanStack Start: activarlo puede colar código de servidor en el cliente */
+    "verbatimModuleSyntax": false /* TanStack Start: activarlo puede colar código de servidor en el cliente */,
     "moduleDetection": "force",
     "noEmit": true,
     "jsx": "react-jsx",
@@ -22,5 +22,5 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"]
+  "include": ["src", "config/test/vitest.d.ts", "config/test/setup.ts"]
 }
