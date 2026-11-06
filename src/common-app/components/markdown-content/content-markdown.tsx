@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { isValidElement, type ReactElement, type ReactNode } from "react";
 import ReactMarkdown, {
   type Components,
   type ExtraProps,
@@ -16,17 +16,42 @@ const textOf = (node: HastNode): string => {
 const ARROW = "→";
 const SOLUTION_LABEL = /^\s*Soluci[oó]n:\s*/;
 
+const toArray = (children: ReactNode) =>
+  Array.isArray(children) ? children : [children];
+
+const isBlankText = (node: HastNode) =>
+  node.type === "text" && !node.value.trim();
+
+// Hijos del nodo y de React al mismo nivel. En listas «sueltas» el <li> lleva
+// "\n", <p>, "\n": se baja al <p> en los dos árboles para que los índices coincidan
+function inlineContent(node: ExtraProps["node"], children: ReactNode) {
+  const nodes = node?.children ?? [];
+  const items = toArray(children);
+  const content = nodes.filter((child) => !isBlankText(child));
+  const [paragraph] = content;
+
+  if (
+    content.length === 1 &&
+    paragraph.type === "element" &&
+    paragraph.tagName === "p"
+  ) {
+    const element = items.find(isValidElement) as
+      ReactElement<{ children?: ReactNode }> | undefined;
+    if (!element) return null;
+    return {
+      inline: paragraph.children,
+      items: toArray(element.props.children),
+    };
+  }
+  return { inline: nodes, items };
+}
+
 // «**Reto:** … → **Solución:** …» (con o sin negrita): devuelve el reto y la solución por separado.
 // Los hijos de React van en el mismo orden que los del nodo, así que se parten por el mismo índice.
 function splitChallenge(node: ExtraProps["node"], children: ReactNode) {
-  // En listas «sueltas» el contenido va dentro de un <p>
-  const inline =
-    node?.children.length === 1 &&
-    node.children[0].type === "element" &&
-    node.children[0].tagName === "p"
-      ? node.children[0].children
-      : (node?.children ?? []);
-  const items = Array.isArray(children) ? children : [children];
+  const content = inlineContent(node, children);
+  if (!content) return null;
+  const { inline, items } = content;
   if (inline.length !== items.length) return null;
 
   for (let i = 0; i < inline.length; i++) {
