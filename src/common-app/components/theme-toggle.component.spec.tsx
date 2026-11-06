@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { cleanup, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { ThemeToggle } from "./theme-toggle.component";
 
@@ -7,6 +7,8 @@ const systemMatchMedia = window.matchMedia;
 
 describe("ThemeToggle", () => {
   afterEach(() => {
+    // Desmontar antes de tocar <html>: si no, el MutationObserver actualiza el componente fuera de act()
+    cleanup();
     html.removeAttribute("data-theme");
     localStorage.clear();
     window.matchMedia = systemMatchMedia;
