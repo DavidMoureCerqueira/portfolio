@@ -1,20 +1,7 @@
 import type { Media } from "@content-island/api-client";
 import type { ProfileApi } from "./api/api.model";
 import { mapperProfileApiToProfileVm } from "./profile.mapper";
-import { TechnologyApi } from "../../common-app/technology/technology.api-model";
-
-export const buildTechnologyApi = (
-  overrides: Partial<TechnologyApi> = {},
-): TechnologyApi => ({
-  id: "react",
-  name: "React",
-  category: "frontend",
-  icon: "react",
-  website: "https://react.dev",
-  language: "es",
-  lastUpdate: "2026-11-01T00:00:00.000Z",
-  ...overrides,
-});
+import { buildTechnologyApi } from "../../common-app/technology/technology.builders";
 
 const buildProfileApi = (overrides: Partial<ProfileApi> = {}): ProfileApi => ({
   id: "profile",
