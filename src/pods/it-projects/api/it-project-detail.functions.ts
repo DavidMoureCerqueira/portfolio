@@ -6,6 +6,7 @@ import { mapItProjectApiToDetailVm } from "../it-project-detail/it-project-detai
 import type { ItProjectDetailVm } from "../it-project-detail/it-project-detail.vm";
 import type { ItProjectApi } from "./api.model";
 import { sortItProjects } from "./it-project.sort";
+import { getNeighbors } from "../../../common-app/navigation/get-neighbors";
 
 export const getItProjectDetail = createServerFn({ method: "GET" })
   // Se ejecuta en el build y el resultado se sirve como JSON estático (uno por slug); debe ser el último middleware
@@ -26,17 +27,14 @@ export const getItProjectDetail = createServerFn({ method: "GET" })
         includeRelatedContent: 1,
         "fields.slug": slug,
       });
-      const index = itProjects.findIndex((project) => project.slug === slug);
-      if (!itProject || index === -1) throw notFound();
 
-      // En bucle: el anterior del primero es el último y el siguiente del último, el primero
-      const prev = itProjects.at(index - 1)!;
-      const next = itProjects[(index + 1) % itProjects.length];
+      const neighbors = getNeighbors(itProjects, slug);
+      if (!itProjects || !neighbors) throw notFound();
 
       return mapItProjectApiToDetailVm(
         itProject,
-        { slug: prev.slug, title: prev.title },
-        { slug: next.slug, title: next.title },
+        neighbors.prev,
+        neighbors.next,
       );
     } catch (error) {
       if (isNotFound(error)) throw error;

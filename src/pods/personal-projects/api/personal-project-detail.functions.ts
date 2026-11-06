@@ -6,6 +6,7 @@ import { mapCarProjectApiToDetailVm } from "../personal-project.mapper";
 import type { CarProjectDetailVm } from "../personal-project.vm";
 import type { CarProjectApi } from "./api.model";
 import { sortPersonalProjects } from "./personal-project.sort";
+import { getNeighbors } from "../../../common-app/navigation/get-neighbors";
 
 export const getCarProjectDetail = createServerFn({ method: "GET" })
   // Se ejecuta en el build y el resultado se sirve como JSON estático (uno por slug); debe ser el último middleware
@@ -27,17 +28,13 @@ export const getCarProjectDetail = createServerFn({ method: "GET" })
         includeRelatedContent: 1,
         "fields.slug": slug,
       });
-      const index = carProjects.findIndex((car) => car.slug === slug);
-      if (!carProject || index === -1) throw notFound();
 
-      // En bucle: el anterior del primero es el último y el siguiente del último, el primero
-      const prev = carProjects.at(index - 1)!;
-      const next = carProjects[(index + 1) % carProjects.length];
-
+      const neighbors = getNeighbors(carProjects, slug);
+      if (!carProject || !neighbors) throw notFound();
       return mapCarProjectApiToDetailVm(
         carProject,
-        { slug: prev.slug, title: prev.title },
-        { slug: next.slug, title: next.title },
+        neighbors.prev,
+        neighbors.next,
       );
     } catch (error) {
       if (isNotFound(error)) throw error;
