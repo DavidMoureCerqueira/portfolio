@@ -4,7 +4,6 @@ import {
 } from "./personal-project.builders";
 import {
   mapCarProjectProgress,
-  mapCover,
   mapModificationsToTechniques,
   mapSpec,
 } from "./personal-project.helpers";
@@ -132,25 +131,6 @@ describe("personal-project.helpers", () => {
       expect(mapSpec(buildCarProjectApi({ year: 1990, engine: "   " }))).toBe(
         "1990",
       );
-    });
-  });
-
-  describe("mapCover", () => {
-    it("should use coverAlt as the alternative text", () => {
-      const carProject = buildCarProjectApi({
-        coverAlt: "El 940 en una tanda",
-      });
-
-      expect(mapCover(carProject).alt).toBe("El 940 en una tanda");
-    });
-
-    it("should use a default text when coverAlt is empty", () => {
-      const carProject = buildCarProjectApi({
-        title: "Volvo 940 Turbo",
-        coverAlt: "",
-      });
-
-      expect(mapCover(carProject).alt).toBe("Portada de Volvo 940 Turbo");
     });
   });
 });

@@ -1,5 +1,7 @@
 import { isStatus } from "../../../common-app/models/status.model";
-import { mapperTechnologyApiToTechnologyVm } from "../../../common-app/technology/technology.mapper";
+import { mapperTechnologyApiToTechnologyVmArray } from "../../../common-app/technology/technology.mapper";
+import { mapCover } from "../../../common-app/mappers/cover.mapper";
+import { toOptionalUrl } from "../../../common-app/mappers/url.mapper";
 import type { ItProjectApi } from "../api/api.model";
 import { kindLabels } from "../api/it-project-kind.labels";
 import { formatProjectDates } from "../../../common-app/dates/format-dates";
@@ -7,9 +9,6 @@ import type {
   ItProjectDetailVm,
   ItProjectLinkVm,
 } from "./it-project-detail.vm";
-
-// "" o espacios → undefined, para que los componentes solo comprueben si existe
-const toOptionalUrl = (url?: string) => url?.trim() || undefined;
 
 const formatTeam = (teamSize?: number) => {
   if (!teamSize) return undefined;
@@ -40,13 +39,8 @@ export function mapItProjectApiToDetailVm(
     dates: formatProjectDates(project.startDate, project.endDate),
     role: project.role || undefined,
     team: formatTeam(project.teamSize),
-    cover: project.cover?.url
-      ? {
-          url: project.cover.url,
-          alt: project.coverAlt || `Portada de ${project.title}`,
-        }
-      : undefined,
-    technologies: project.technologies.map(mapperTechnologyApiToTechnologyVm),
+    cover: mapCover(project),
+    technologies: mapperTechnologyApiToTechnologyVmArray(project.technologies),
     demoUrl,
     repoUrl,
     isInternal: !demoUrl && !repoUrl && project.kind === "practicas",

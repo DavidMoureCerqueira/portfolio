@@ -19,7 +19,7 @@ export interface CarProjectDetailVm {
   spec: string;
   status: Status;
   summary: string;
-  cover: { url: string; alt: string };
+  cover?: { url: string; alt: string };
   // Marca, Modelo (+ versión), Año, Motor, Comprado
   facts: Fact[];
   goals: CarGoalVm[];

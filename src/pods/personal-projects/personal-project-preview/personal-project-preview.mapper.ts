@@ -1,8 +1,8 @@
+import { mapCover } from "../../../common-app/mappers/cover.mapper";
 import { isStatus } from "../../../common-app/models/status.model";
 import type { CarProjectApi } from "../api/api.model";
 import {
   mapCarProjectProgress,
-  mapCover,
   mapModificationsToTechniques,
   mapSpec,
 } from "../personal-project.helpers";

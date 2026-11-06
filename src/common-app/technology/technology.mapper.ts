@@ -14,7 +14,7 @@ export function mapperTechnologyApiToTechnologyVm(
 }
 
 export function mapperTechnologyApiToTechnologyVmArray(
-  skills: TechnologyApi[],
+  skills: TechnologyApi[] = [],
 ): TechnologyVm[] {
   return skills.map(mapperTechnologyApiToTechnologyVm);
 }

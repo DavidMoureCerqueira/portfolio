@@ -75,8 +75,3 @@ export function mapModificationsToTechniques(
 // "1990 · 2.3 turbo · 200 CV": año y motor, omitiendo el motor si no hay
 export const mapSpec = (carProject: CarProjectApi) =>
   [carProject.year, carProject.engine?.trim()].filter(Boolean).join(" · ");
-
-export const mapCover = (carProject: CarProjectApi) => ({
-  url: carProject.cover.url,
-  alt: carProject.coverAlt || `Portada de ${carProject.title}`,
-});

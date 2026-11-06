@@ -1,13 +1,10 @@
 import type { Fact } from "../../common-app/components";
 import { formatMonthYear } from "../../common-app/dates/format-dates";
+import { mapCover } from "../../common-app/mappers/cover.mapper";
 import { isStatus } from "../../common-app/models/status.model";
 import type { CarProjectApi } from "./api/api.model";
 import { mapModificationApiToVm } from "./modifications/modification.map";
-import {
-  mapCarProjectProgress,
-  mapCover,
-  mapSpec,
-} from "./personal-project.helpers";
+import { mapCarProjectProgress, mapSpec } from "./personal-project.helpers";
 import type {
   CarGoalVm,
   CarProjectDetailVm,

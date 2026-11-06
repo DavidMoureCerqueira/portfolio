@@ -7,7 +7,7 @@ export interface CarProjectPreviewVm {
   spec: string;
   status: Status;
   summary: string;
-  cover: { url: string; alt: string };
+  cover?: { url: string; alt: string };
   progress: Record<Status, number>;
   modificationsTotal: number;
   // "9 modificaciones · 6 finalizadas · 2 en curso · 1 pendiente"
